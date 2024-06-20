@@ -1,0 +1,353 @@
+@charset "UTF-8";
+@font-face {
+    font-family: AppleChancery; src: url('../fonts/Apple-Chancery.ttf');
+}
+@font-face {
+    font-family: ChicagoFLF; src: url('../fonts/ChicagoFLF.ttf');
+}
+@font-face {
+    font-family: ComicSansMS; src: url('../fonts/Comic-Sans-MS.ttf');
+}
+@font-face {
+    font-family: FindersKeepers; src: url('../fonts/FindersKeepers.ttf');
+}
+@font-face {
+    font-family: Papyrus; src: url('../fonts/Papyrus.ttc');
+}
+@font-face {
+    font-family: PartyLET; src: url('../fonts/PartyLET-plain.ttf');
+}
+@font-face {
+    font-family: PixelTNR; src: url('../fonts/pixelated-times-new-roman.ttf');
+}
+@font-face {
+    font-family: VCRMono; src: url('f../onts/VCR_OSD_MONO_1.001.ttf');
+}
+body {
+	margin : 0;
+	font-family : ChicagoFLF;
+	image-rendering : pixelated;
+}
+.bootupText {
+	font-family: FindersKeepers;
+	color: #5eca3b;
+	font-size: 30pt;
+	filter: blur(0.5px);
+	margin-left : 20px;
+}
+.muteButton {
+    bottom : 10px;
+    right : 10px;
+    cursor : pointer;
+    width : 75px;
+    height : 75px;
+    position : fixed;
+}
+#toolbar {
+	background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(195,195,195,1) 100%);
+	width : 100%;
+	border-bottom : 2px solid black;
+	height : 30px;
+	display : flex;
+}
+@media (max-width: 1119px) {
+    #toolbar {
+        height: 50px;
+    }
+}
+ul {
+	list-style-type : none;
+	margin : 0;
+	padding : 0;
+	position : fixed;
+	top : 0;
+	justify-content : space-evenly;
+}
+li {
+	display : inline;
+	margin-top : 5px;
+	margin-right : 15px;
+}
+li a:link {
+	color : black;
+	text-decoration : none;
+}
+li a:visited {
+	color : black;
+}
+.window {
+	position : absolute;
+	background : rgba(215,215,215,1);
+	border : 2px solid black;
+	box-shadow : inset 0 0 6px black;
+	padding : 0px 10px 10px 10px;
+	width : flex;
+}
+.windowHeader {
+	cursor : move;
+	padding: 10px;
+	text-align : center;
+}
+.windowCloseButton {
+	border : 2px solid black;
+	font-size : 10px;
+	float : left;
+	cursor : pointer;
+	width : 10px;
+}
+#mainVideoPlayer {
+	width : 850px;
+	height : 430px;
+	z-index : 3;
+	top : 150px;
+	left : 20px;
+}
+#audioPlayer {
+    top : 500px;
+    right : 175px;
+    z-index : 2;
+    width : 250px;
+}
+#videoPlayerTwo {
+    top : 300px;
+    left : 800px;
+    display : none;
+    z-index : 4;
+    width : 410px;
+}
+#videoInMainPlayer {
+	width : 625px;
+	margin : auto;
+	border : 2px solid black;
+}
+#videoInPlayerTwo {
+    display : flex;
+    margin : auto;
+    width : 400px;
+    border : 2px solid black;
+}
+#videoInPlayerTwoPlayButton {
+    display : inline;
+    float : left;
+    width : 25px;
+    height : 25px;
+}
+#videoInMainPlayerPlayButton {
+    display : inline;
+    float : left;
+    width : 25px;
+    height : 25px;
+}
+#videoInMainPlayerMuteButton {
+	display : inline;
+    float : right;
+	width : 25px;
+	height : 25px;
+	padding-bottom : 10px;
+}
+#videoInPlayerTwoMuteButton {
+    display : inline;
+    float : right;
+    width : 25px;
+    height : 25px;
+    padding-bottom : 10px;
+}
+#mainVideoProgressContainer {
+	padding-top : 10px;
+    width: 575px;
+    height: 5px;
+    margin : auto;
+    display : flex;
+    position: relative;
+}
+
+#mainVideoProgressBar {
+    width: 0;
+    margin : auto;
+    display : flex;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#videoProgressContainerTwo {
+    margin-top : 10px;
+    width: 400px;
+    height: 5px;
+    margin : auto;
+    display : flex;
+    position: relative;
+}
+
+#videoProgressBarTwo {
+    width: 0;
+    margin : auto;
+    display : flex;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top : 10px;
+}
+#openAudioPlayer {
+	right : 30px;
+	top : 40px;
+	position : fixed;
+	text-align : center;
+}
+#openAudioPlayer p {
+	margin : auto;
+}
+#openMainVideoPlayer {
+    right : 28px;
+    top : 260px;
+    position : fixed;
+    text-align : center;
+}
+#openMainVideoPlayer p {
+    margin : auto;
+}
+#openVideoPlayerTwo {
+    right : 20px;
+    top : 375px;
+    position : fixed;
+    text-align : center;
+}
+#openVideoPlayerTwo p {
+    margin : auto;
+}
+#openAboutMe {
+    right : 40px;
+    top : 145px;
+    position : fixed;
+    text-align : center;
+}
+#openAboutMe a {
+    display : flex;
+}
+#openAboutMe a:link {
+    text-decoration : none;
+    color : black;
+}
+#openAboutMe a:visited {
+    text-decoration : none;
+    color : black;
+}
+.marqueeContainer {
+    background-color: black;
+    color: white;
+    font-family : FindersKeepers;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    width : 250px;
+}
+.marquee {
+    display: inline-block;
+    font-size : 20pt;
+    padding-left: 50%;
+    animation: marquee 10s linear infinite;
+}
+@keyframes marquee {
+   0% {
+     transform : translateX(0%);
+     }
+   100% {
+     transform : translateX(-100%);
+}
+}
+#buttonBar {
+   position : relative;
+   margin : auto;
+   padding-top : 6px;
+   width : 90px;
+}
+#audio1PlayButton {
+	width : 25px;
+	display : inline;
+}
+#forwardButton {
+	width : 25px;
+	display : inline;
+}
+#backButton {
+    width : 25px;
+    display : inline;
+}
+.column {
+	float : left;
+}
+.right {
+	margin-left : 10px;
+	width : 175px;
+    background : rgba(195,195,195,1);
+    border : 2px solid black;
+    box-shadow : inset 0 0 6px black;
+	height : 375px;
+	overflow-y : auto;
+}	
+.left {
+	width : 625px;
+	margin-right : 20px;
+}
+.column h1 {
+	font-size : 16pt;
+	text-align : center;
+	margin-top : 10px;
+}
+.openVideo img{
+	width : 75px;
+    display : flex;
+    margin : auto;
+}
+.openVideo p {
+	font-size : 20pt;
+	font-family : FindersKeepers;
+	text-align : center;
+	margin-top : 0;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  box-shadow: inset 0 0 2px grey; 
+}
+::-webkit-scrollbar-thumb {
+  background: black; 
+}
+.grayscale{
+    filter: grayscale(100%);
+}
+.grayscale-bg {
+	background-color : gray;
+}
+#grayscaleButton {
+	position : fixed;
+	top : 490px;
+	right : 13px;
+	text-align : center;
+}
+#grayscaleButton p{
+    margin : auto;
+}
+h3 {
+	text-align : center;
+	margin : auto;
+}
+#infoWindow {
+	display : block;
+	width : 350px;
+	z-index : 1;
+	top : 80px;
+	right : 160px;
+}
+#infoWindow p {
+    background : rgba(195,195,195,1);
+    border : 2px solid black;
+    box-shadow : inset 0 0 6px black;
+	font-family : FindersKeepers;
+	font-size : 20pt;
+	padding : 5px 10px 10px 10px;
+	margin-bottom : 0px;
+	margin-top : 5px;
+}
