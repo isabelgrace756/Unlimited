@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+<meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="../css/styles.css">
+ <script src="/path/to/jquery.min.js"></script>
+ <script src="jquery.marquee.js"></script>
+<title>UNLIMITED</title>
+</head>
+<body style="background-color: black">
+<div id="splashScreen">
+<audio src="../assets/computerFan.mp3" muted autoplay loop id="splashAudio"></audio>
+<div class="bootupText"></div>
+<img src="../assets/homeMuted.png" class="muteButton" onclick="toggleMute('../assets/homeMuted.png', '../assets/homeUnmuted.png', 'splashAudio')">
+</div>
+<div id="navigationScreen" style="display : none">
+<ul id="toolbar">
+<li><a href="theBeginning.html">The Beginning</a></li>
+<li><a href="tvEra.html">Origins of the Info Era</a></li>
+<li><a href="theNineties.html">The Nineties</a></li>
+<li><a href="y2k.html">The 2000s</a></li>
+<li><a href="theiPhone.html">2007: The iPhone</a></li>
+<li><a href="socialMedia.html">The Rise of Social Media</a></li>
+<li><a href="futures.html">What Lies Ahead?</a></li>
+</ul>
+
+<div class="window" id="mainVideoPlayer">
+<div class="windowHeader" id="mainVideoPlayerHeader"><span class="windowCloseButton" id="closeMainVideoPlayer">X</span>==== Video Player ====</div>
+<div class="column left"><video id="videoInMainPlayer" autoplay muted loop>
+<source src="../assets/forest.mp4" type="video/mp4"></source>
+</video>
+<img src="../assets/pauseButton.png" id="videoInMainPlayerPlayButton" onclick="togglePlay('../assets/pauseButton.png', '../assets/playButton.png', 'videoInMainPlayer')">
+<img src="../assets/landingMuted.png" id="videoInMainPlayerMuteButton" onclick="toggleVideoMute('../assets/landingMuted.png', '../assets/landingUnmuted.png', 'videoInMainPlayer')">
+    <div id="mainVideoProgressContainer">
+        <div id="mainVideoProgressBar"></div>
+    </div>
+</div>
+<div class="column right"><h1>Video Library</h1>
+<div id="openVideo1" class="openVideo"><img src="../assets/video.png"><p>Video 1</p></div>
+<div id="openVideo2" class="openVideo"><img src="../assets/video.png"><p>Video 2</p></div>
+<div id="openVideo3" class="openVideo"><img src="../assets/video.png"><p>Video 3</p></div>
+</div>
+</div>
+
+<div class="window" id="audioPlayer">
+<div class="windowHeader" id="audioPlayerHeader"><span class="windowCloseButton" id="closeAudioPlayer">X</span>==== Audio Player ====</div>
+<div class='marqueeContainer'><div class="marquee">Choir Singing - The Choir</div><div class="marquee">Choir Singing - The Choir</div></div>
+<audio src="../assets/choir.mp3" muted id="audio1"></audio>
+<div id="buttonBar">
+<img src="../assets/back.png" id='backButton' onclick="backAudio(audio1)">
+<img src="../assets/playButton.png" id="audio1PlayButton" onclick="toggleAudioPlay('../assets/pauseButton.png', '../assets/playButton.png', 'audio1')">
+<img src="../assets/forward.png" id="forwardButton"></div>
+</div>
+
+<div class="window" id="videoPlayerTwo">
+<div class="windowHeader" id="VideoPlayerTwoHeader"><span class="windowCloseButton" id="closeVideoPlayerTwo">X</span>You look like you need a break</div>
+<video id="videoInPlayerTwo" autoplay muted loop>
+<source src="../assets/food.mp4" type="video/mp4"></source>
+</video>
+<img src="../assets/pauseButton.png" id="videoInPlayerTwoPlayButton" onclick="togglePlay('../assets/pauseButton.png', '../assets/playButton.png', 'videoInPlayerTwo')">
+<img src="../assets/landingMuted.png" id="videoInPlayerTwoMuteButton" onclick="toggleVideoMute('../assets/landingMuted.png', '../assets/landingUnmuted.png', 'videoInPlayerTwo')">
+    <div id="videoProgressContainerTwo">
+        <div id="videoProgressBarTwo"></div>
+    </div></div>
+<div id="infoWindow" class="window">
+<div class="windowHeader" id="infoWindowHeader">==== What is this? ====</div>
+<h3>ABOUT UNLIMITED</h3>
+<p><span style="font-family : Apple Chancery; font-size : 14pt; color : #0222c5">Unlimited</span> is the passion project of Isabel Nixon. Frustrated with the <span style="font-family : PixelTNR; font-size : 25pt; color : red;">attention economy</span> of today, she set out to display the finest - and most annoying - parts of the Information Era.
+Explore the site. Laugh at its gaudy stupidity and the unironic use of <span style="font-family : ComicSansMS; font-size : 14pt; color : green">Comic Sans</span> as a design element. Remember what was good and use it to take a break from being marketed to and influenced.</p>
+</div>  
+<div id="openAudioPlayer">
+<img src="../assets/audioPlayer.png" width="75px"><p>Audio Player</p>
+</div>
+<div id="openAboutMe">
+<img src="../assets/aboutMe.png" width="75px"><a href="aboutMe.html">About Me</a>
+</div>
+<div id="openMainVideoPlayer"><img src="../assets/videoPlayer.png" width="75px"><p>Video Player</p></div>
+<div id="openVideoPlayerTwo"><img src="../assets/subwaySurfers.png" width="75px"><p>Need a break?</p></div>
+<div id="grayscaleButton"><img src="../assets/iNeedABreak.png" width="75px"><p>Make Me Boring</p></div>
+</div>
+<script src="../js/script.js"></script>
+</body>
+</html>
