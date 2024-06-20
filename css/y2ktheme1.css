@@ -1,0 +1,302 @@
+@charset "UTF-8";
+@font-face {
+    font-family: Apple-Chancery; src: url('../fonts/Apple-Chancery.ttf');
+}
+@font-face {
+    font-family: ChicagoFLF; src: url('fonts/ChicagoFLF.ttf');
+}
+@font-face {
+    font-family: ComicSans; src: url('../fonts/Comic-Sans-MS.ttf');
+}
+@font-face {
+    font-family: FindersKeepers; src: url('../fonts/FindersKeepers.ttf');
+}
+@font-face {
+    font-family: Papyrus; src: url('../fonts/Papyrus.ttc');
+}
+@font-face {
+    font-family: PartyLET; src: url('../fonts/PartyLET-plain.ttf');
+}
+@font-face {
+    font-family: PixelTNR; src: url('../fonts/pixelated-times-new-roman.ttf') format('truetype');
+}
+@font-face {
+    font-family: VCRMono; src: url('../fonts/VCR_OSD_MONO_1.001.ttf');
+}
+body {
+	margin : 0;
+	font-family : PartyLET;
+	background-color : #f17aff; 
+	background-image : url('../y2kAssets/theme1/bg.gif');
+}
+#header {
+	width : 100%;
+    background-color : #111111;
+    height : 100px;
+    top : 0;
+    position : absolute;
+}
+#header h1 {
+	margin-top : 10px;
+	text-align : center;
+	font-size : 60pt;
+	color : #f17aff;
+}
+#header a {
+	font-size : 14pt;
+	font-family : ComicSans;
+	color : #f17aff;
+}
+#previousPage {
+	top : 40px;
+    left : 20px;
+    position : absolute;
+}
+#nextPage {
+	position : absolute;
+	right : 20px;
+	top : 40px;
+}
+.column {
+    float: left;
+    padding-left : 15px;
+}
+.one {
+    width: 25%;
+}
+.two {
+    width: 35%;
+}
+.three {
+    width: 40%;
+}   
+#usernameBox {
+	background-color : #f17aff;
+	border-radius : 50px;
+	border : 1px solid black;
+	top : 125px;
+    position : relative;
+    margin-bottom : 140px;
+}
+#usernameBox h2 {
+	margin-top : 0;
+	font-size : 20pt;
+	font-family : Times;
+	margin-left : 15px;
+}
+#username {
+	height : 25px;
+	border : 1px solid black;
+	width : 150px;
+	background-color : #ffc2fd;
+}
+#profilePic {
+	border-radius : 50px;
+	background-color : black;
+	width : 60%;
+	margin-left : 20%;
+	margin-top : 15px;
+}
+::placeholder {
+	color : black;
+	font-family : Times;
+	font-size : 15pt;
+}
+button {
+	border : 1px solid black;
+	height : 25px;
+	background-color : #ffc2fd;
+}
+button:hover {
+	background-color : #f17aff;
+	cursor : pointer;
+}
+#friends150 {
+	background-color : #5eca3b;
+	border : 1px solid black;
+	border-radius : 50px;
+}
+#friends150 p{
+	font-family : ComicSans;
+	font-size : 12pt;
+	margin : 15px;
+}
+#friends150 h2 {
+	font-size : 30pt;
+	margin-bottom : 0;
+	margin-left : 15px;
+}
+
+#feelingBox {
+	background-color : #6666d0;
+	border-radius : 50px;
+	top : 125px;
+	position : relative;
+	border : 1px solid black;
+	margin-bottom : 140px;
+}
+#feelingBox h2 {
+	font-size : 40pt;
+	margin-bottom : 0;
+	text-align : center;
+}
+#feelingBox p {
+	font-size : 12pt;
+	font-family : Times;
+	text-align : center;
+	margin-top : 0;
+}
+
+li {
+	display : inline;
+	margin-right : 25px;
+	font-size : 25pt;
+}
+li:hover {
+    text-decoration : underline;
+}
+ul {
+	text-align : center;
+    list-style-type : none;
+    justify-content : space-evenly;
+}
+#theme1Button {
+	font-family : PartyLET;
+	font-size : 35pt;
+}
+#theme2Button {
+    font-family : Papyrus;
+}
+#theme3Button {
+    font-family : ComicSans;
+}
+#theme4Button {
+    font-family : Apple-Chancery;
+}
+#nowPlaying {
+	background-color : #DB0083;
+	border-radius : 50px;
+	border : 1px solid black;
+	height : 200px;
+	text-align : center;
+}
+#nowPlaying h2 {
+	font-size : 40pt;
+	margin-top : 20px;
+	margin-bottom : 0;
+}
+#nowPlaying p {
+	font-size : 25pt;
+	font-family : ComicSans;
+	margin-top : 20px;
+	color: #111111;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+#gridPicBox {
+	background-color : #f17aff;
+	height : 250px;
+	border : 1px solid black;
+	border-radius : 50px;
+	margin-top : 20px;
+}
+#gridSticker1 {
+	top : 340px;
+	left : 225px;
+	position : absolute;
+}
+#gridSticker2 {
+    top : 650px;
+    left : 725px;
+    position : absolute;
+    z-index : 100;
+}
+#gridSticker3 {
+    top : 600px;
+    left : 575px;
+    position : absolute;
+}
+#gridSticker4 {
+    top : 580px;
+    left : 400px;
+    position : absolute;
+}
+#videoPlayer {
+	background-color : #5eca3b;
+	border-radius : 50px;
+	width : 500px;
+	height : 270px;
+	position : absolute;
+	top : 125px;
+	right : 25px;
+	border : 1px solid black;
+}
+#video {
+	position : absolute;
+	width : 400px;
+    top : 20px;
+    right : 50px;
+    border : 1px solid black;
+    image-rendering : pixelated;
+}
+#videoStickerA {
+	position : absolute;
+	width : 100px;
+}
+#videoStickerB {
+    position : absolute;
+    width : 150px;
+    right : 0;
+    top : 140px;
+}
+#blurbs {
+	background-color : #6666d0;
+	border-radius : 50px;
+	border : 1px solid black;
+	position : absolute;
+	right : 25px;
+	top : 415px;
+	width : 500px;
+	text-align : center;
+}
+#blurbs h2 {
+	font-size : 40pt;
+	text-align : center;
+	margin : 20px 10px 0px 10px;
+}
+#blurbs p {
+	font-family : Times;
+	font-size : 16pt;
+	margin-top : 0;
+	margin-left : 15px;
+	margin-bottom : 0;
+}
+#endOfPage {
+	font-size : 30pt;
+	background-color : #DB0083;
+	color : black;
+	position : absolute;
+	top : 850px;
+	height : 150px;
+	text-align : center;
+	margin : auto;
+	width : 100%;
+}
+.muteButton {
+    bottom : 10px;
+    right : 10px;
+    cursor : pointer;
+    width : 75px;
+    height : 75px;
+    position : fixed;
+}
