@@ -1,0 +1,317 @@
+@charset "UTF-8";
+@font-face {
+    font-family: Apple-Chancery; src: url('fonts/Apple-Chancery.ttf');
+}
+@font-face {
+    font-family: ChicagoFLF; src: url('fonts/ChicagoFLF.ttf');
+}
+@font-face {
+    font-family: ComicSans; src: url('../fonts/Comic-Sans-MS.ttf');
+}
+@font-face {
+    font-family: FindersKeepers; src: url('../fonts/FindersKeepers.ttf');
+}
+@font-face {
+    font-family: Papyrus; src: url('../fonts/Papyrus.ttc');
+}
+@font-face {
+    font-family: PartyLET; src: url('../fonts/PartyLET-plain.ttf');
+}
+@font-face {
+    font-family: PixelTNR; src: url('../fonts/pixelated-times-new-roman.ttf') format('truetype');
+}
+@font-face {
+    font-family: VCRMono; src: url('../fonts/VCR_OSD_MONO_1.001.ttf');
+}
+body {
+	margin : 0;
+	font-family : ComicSans;
+	background-color : #9747FF; 
+    background-image : url('../y2kAssets/theme3/bg.gif');
+}
+#header {
+	width : 100%;
+    background-color : #111111;
+    height : 100px;
+    top : 0;
+    position : absolute;
+}
+#header h1 {
+	margin-top : 20px;
+	text-align : center;
+	font-size : 35pt;
+	color : #5eca3b;
+}
+#header a {
+	font-size : 14pt;
+	font-family : ComicSans;
+	color : #fffe23;
+}
+#previousPage {
+	top : 40px;
+    left : 20px;
+    position : absolute;
+}
+#nextPage {
+	position : absolute;
+	right : 20px;
+	top : 40px;
+}
+.column {
+    float: left;
+    padding-left : 15px;
+}
+.one {
+    width: 25%;
+}
+.two {
+    width: 35%;
+}
+.three {
+    width: 40%;
+}   
+#usernameBox {
+	background-color : #0222c5;
+	border-radius : 50px;
+	border : 1px solid black;
+	top : 125px;
+    position : relative;
+    margin-bottom : 140px;
+}
+#usernameBox h2 {
+	margin-top : 0;
+	font-size : 20pt;
+	font-family : Times;
+	margin-left : 15px;
+	color : white;
+}
+#username {
+	height : 25px;
+	border : 1px solid black;
+	width : 150px;
+	background-color : white;
+}
+#profilePic {
+	border-radius : 50px;
+	background-color : black;
+	height : 150px;
+	margin-left : 30%;
+	margin-top : 15px;
+}
+::placeholder {
+	color : black;
+	font-family : Times;
+	font-size : 15pt;
+}
+button {
+	border : 1px solid black;
+	height : 25px;
+	background-color : white;
+}
+button:hover {
+	background-color : linear-gradient(red, yellow);
+	cursor : pointer;
+}
+#friends150 {
+	background-color : #5eca3b;
+	border : 1px solid black;
+	border-radius : 50px;
+}
+#friends150 p{
+	font-family : ComicSans;
+	font-size : 12pt;
+	margin : 15px;
+}
+#friends150 h2 {
+	font-size : 30pt;
+	margin-bottom : 0;
+	margin-left : 15px;
+}
+
+#feelingBox {
+	background-color : #5eca3b;
+	border-radius : 50px;
+	top : 125px;
+	position : relative;
+	border : 1px solid black;
+	margin-bottom : 140px;
+}
+#feelingBox h2 {
+	font-size : 30pt;
+	margin-bottom : 0;
+	text-align : center;
+}
+#feelingBox p {
+	font-size : 12pt;
+	font-family : Times;
+	text-align : center;
+	margin-top : 0;
+}
+
+li {
+	display : inline;
+	margin-right : 25px;
+	font-size : 25pt;
+}
+li:hover {
+	text-decoration : underline;
+}
+ul {
+	text-align : center;
+    list-style-type : none;
+    justify-content : space-evenly;
+}
+#theme1Button {
+	font-family : PartyLET;
+	font-size : 35pt;
+}
+#theme2Button {
+    font-family : Papyrus;
+}
+#theme3Button {
+    font-family : ComicSans;
+}
+#theme4Button {
+    font-family : Apple-Chancery;
+}
+#nowPlaying {
+	background-color : #0222c5;
+	border-radius : 50px;
+	border : 1px solid black;
+	height : 200px;
+	text-align : center;
+}
+#nowPlaying h2 {
+	font-size : 30pt;
+	color : white;
+	margin-top : 20px;
+	margin-bottom : 0;
+}
+#nowPlaying p {
+	font-size : 25pt;
+	font-family : ComicSans;
+	margin-top : 20px;
+	color: #111111;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #5eca3b, 0 0 40px #5eca3b, 0 0 50px #5eca3b, 0 0 60px #5eca3b, 0 0 70px #5eca3b, 0 0 80px #5eca3b;
+  }
+}
+#gridPicBox {
+	background-color : #fffe23;
+	height : 250px;
+	border : 1px solid black;
+	border-radius : 50px;
+	margin-top : 20px;
+}
+#gridSticker1 {
+	top : 340px;
+	left : 250px;
+	position : absolute;
+}
+#gridSticker1 img {
+	width : 100px;
+}
+#gridSticker2 {
+    top : 550px;
+    left : 725px;
+    position : absolute;
+    z-index : 100;
+}
+#gridSticker3 {
+    top : 550px;
+    left : 600px;
+    position : absolute;
+}
+#gridSticker3 img {
+	width : 150px;
+}
+#gridSticker4 {
+    top : 630px;
+    left : 400px;
+    position : absolute;
+}
+#videoPlayer {
+	background-color : #fffe23;
+	border-radius : 50px;
+	width : 500px;
+	height : 270px;
+	position : absolute;
+	top : 125px;
+	right : 25px;
+	border : 1px solid black;
+}
+#video {
+	position : absolute;
+	width : 400px;
+    top : 20px;
+    right : 50px;
+    border : 1px solid black;
+    image-rendering : pixelated;
+}
+#videoStickerA {
+	position : absolute;
+	width : 100px;
+}
+#videoStickerB {
+    position : absolute;
+    width : 150px;
+    right : 0;
+    top : 140px;
+    z-index : 1;
+}
+#blurbs {
+	background-color : #0222c5;
+	border-radius : 50px;
+	border : 1px solid black;
+	position : absolute;
+	right : 25px;
+	top : 415px;
+	width : 500px;
+	text-align : center;
+}
+#blurbs h2 {
+	font-size : 30pt;
+	text-align : center;
+	margin : 20px 10px 0px 10px;
+	color : white;
+}
+#blurbs p {
+	font-family : Times;
+	font-size : 16pt;
+	margin-top : 0;
+	margin-left : 15px;
+	margin-bottom : 10px;
+	color : white;
+}
+#blurbs img {
+	width : 200px;
+}
+#endOfPage {
+	font-family : ComicSans;
+	font-size : 15pt;
+	background-color : #5eca3b;
+	color : black;
+	position : absolute;
+	top : 900px;
+	height : 105px;
+	text-align : center;
+	margin : auto;
+	width : 100%;
+}
+.muteButton {
+    bottom : 10px;
+    right : 10px;
+    cursor : pointer;
+    width : 75px;
+    height : 75px;
+    position : fixed;
+}
