@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Television</title>
+</head>
+<body>
+<audio muted autoplay loop id="audioElement"><source src="../assets/tvStatic.wav" type="audio/wav"></audio>
+<style>
+@font-face {
+    font-family: VCRMono; src: url('../fonts/VCR_OSD_MONO_1.001.ttf');
+}
+body {
+    background-image : url("../assets/tvBg.jpeg");
+    background-size : 1800px;
+    overflow : hidden;
+    font-family : VCRMono;
+}
+#frame {
+    width : 850px;
+    top : -80px;
+    left : 290px;
+    position : fixed;
+    z-index : 20;
+}
+ul {
+    font-size : 20pt;
+    display : flex;
+    width : 100%;
+    margin : 0;
+    margin-top : 10px;
+    padding : 0;
+    position : fixed;
+    top : 0;
+    justify-content : space-between;
+    list-style-type : none;
+}
+li { margin-right : 20px; }
+a:link {
+    color : black;
+    text-decoration : none;
+}
+a:hover { text-decoration : underline }
+a:visited { color : black }
+#videoInFrame {
+    z-index : 15;
+    position : fixed;
+    top : 150px;
+    left : 350px;
+    object-fit : fill;
+}
+#staticFilterVideo {
+    z-index : 19;
+    mix-blend-mode : screen;
+    position : fixed;
+    top : 150px;
+    left : 350px;
+}
+#changeChannel { position : fixed; top : 250px; left : 475px; z-index : 18; text-wrap : nowrap }
+.muteButton {
+    bottom : 15px;
+    right : 10px;
+    cursor : pointer;
+    width : 75px;
+    position : fixed;
+    z-index : 19;
+}
+@keyframes blink {
+    0% { opacity : 1; }
+    50% { opacity : 0; }
+    100% { opacity : 1; }
+}
+#channel1 {
+    background-color : #f17aff;
+    z-index : 30;
+    width : 19px;
+    height : 7px;
+    cursor : pointer;
+    position : fixed;
+    top : 170px;
+    left : 967px;
+    animation : blink 1s infinite;
+}
+#channel2 {
+    background-color : #f17aff;
+    z-index : 30;
+    width : 19px;
+    height : 7px;
+    cursor : pointer;
+    position : fixed;
+    top : 190px;
+    left : 967px;
+    animation : blink 1s infinite;
+}
+#channel3 {
+    background-color : #f17aff;
+    z-index : 30;
+    width : 19px;
+    height : 7px;
+    cursor : pointer;
+    position : fixed;
+    top : 211px;
+    left : 967px;
+    animation : blink 1s infinite;
+}
+#channel4 {
+    background-color : #f17aff;
+    z-index : 30;
+    width : 19px;
+    height : 7px;
+    cursor : pointer;
+    position : fixed;
+    top : 232px;
+    left : 967px;
+    animation : blink 1s infinite;
+}
+#channel5 {
+    background-color : #f17aff;
+    z-index : 30;
+    width : 19px;
+    height : 7px;
+    cursor : pointer;
+    position : fixed;
+    top : 253px;
+    left : 967px;
+    animation : blink 1s infinite;
+}
+#channel6 {
+    background-color : #f17aff;
+    z-index : 30;
+    width : 19px;
+    height : 7px;
+    cursor : pointer;
+    position : fixed;
+    top : 274px;
+    left : 967px;
+    animation : blink 1s infinite;
+}
+#channel7 {
+    background-color : #f17aff;
+    z-index : 30;
+    width : 19px;
+    height : 7px;
+    cursor : pointer;
+    position : fixed;
+    top : 295px;
+    left : 966px;
+    animation : blink 1s infinite;
+}
+#channel8 {
+    background-color : #f17aff;
+    z-index : 30;
+    width : 19px;
+    height : 7px;
+    cursor : pointer;
+    position : fixed;
+    top : 316px;
+    left : 966px;
+    animation : blink 1s infinite;
+}
+</style>
+<div id="toolbar">
+<ul><li><a href="theBeginning.html">Previous Page</a></li><li><a href="theNineties.html">Next Page</a></li></ul>
+</div>
+<div id="tvContainer">
+<img src="../assets/tvFrame.png" id="frame">
+<video src="../assets/stableBars.mp4" autoplay muted loop id="videoInFrame" height="450px" width="700px"></video>
+<video src="../assets/staticFilter.mp4" autoplay muted loop id="staticFilterVideo" height="450px" width="700px"></video>
+<h1 id="changeChannel">Change the Channel</h1>
+<div id='channel1'></div>
+<div id='channel2'></div>
+<div id='channel3'></div>
+<div id='channel4'></div>
+<div id='channel5'></div>
+<div id='channel6'></div>
+<div id='channel7'></div>
+<div id='channel8'></div>
+</div>
+<img src="../assets/landingMuted.png" class="muteButton" onclick="toggleMute('../assets/landingMuted.png', '../assets/landingUnmuted.png')">
+<script>
+//MUTE BUTTON
+function toggleMute(mutedImg, unmutedImg) {
+    let audio = document.getElementById("audioElement");
+    audio.play();
+    if (audio.muted) {
+        audio.muted = false;
+        document.querySelector(".muteButton").src = unmutedImg;
+    } else {
+        audio.muted = true;
+        document.querySelector(".muteButton").src = mutedImg;
+    }
+    }
+// CHANNEL ONE
+var channel1 = document.getElementById("channel1");
+var channel2 = document.getElementById("channel2");
+var channel3 = document.getElementById("channel3");
+var channel4 = document.getElementById("channel4");
+var channel5 = document.getElementById("channel5");
+var channel6 = document.getElementById("channel6");
+var channel7 = document.getElementById("channel7");
+var channel8 = document.getElementById("channel8");
+var changeChannel = document.getElementById("changeChannel");
+
+channel1.addEventListener("click", function() {
+	changeChannel.innerHTML = "Change the Channel";
+});
+channel2.addEventListener("click", function() {
+    changeChannel.innerHTML = "HELLO, WORLD!";
+});
+    </script>
+</body>
+</html>
