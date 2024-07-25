@@ -37,7 +37,14 @@ function typeAllLines(lines, element, index = 0) {
         textTypeEffect(lineElement, lines[index], () => typeAllLines(lines, element, index + 1));
     }
 }
-typeAllLines(lines, div);
+// CHECKS IF SPLASH SCREEN HAS BEEN SHOWN BEFORE
+if (sessionStorage.getItem('splashScreenShown')) {
+    splashScreen.style.display = "none";
+    document.body.style.background = "#6666d0";
+    navigationScreen.style.display = "block";
+} else {
+    typeAllLines(lines, div);
+}
 
 // CLOSES SPLASH SCREEN ON USER ENTER
 document.addEventListener('keypress', function (e) {
@@ -45,6 +52,7 @@ document.addEventListener('keypress', function (e) {
       splashScreen.style.display = "none";
       document.body.style.background = "#6666d0";
       navigationScreen.style.display = "block";
+      sessionStorage.setItem('splashScreenShown', 'true');
     }
 });
 
@@ -132,12 +140,18 @@ videoOpen.addEventListener("dblclick", function() {
 })
 var videoTwoClose = document.getElementById("closeVideoPlayerTwo");
 var videoTwoOpen = document.getElementById("openVideoPlayerTwo");
+var videoTwo = document.getElementById("videoInPlayerTwo");
 
 videoTwoClose.addEventListener("click", function() {
     closeWindow(videoPlayerTwo);
 })
+videoTwoOpen.addEventListener("click", function() {
+    videoTwoOpen.querySelector("p").style.background = "white";
+})
 videoTwoOpen.addEventListener("dblclick", function() {
     openWindow(videoPlayerTwo);
+    videoTwoOpen.querySelector("p").style.background = "none";
+    videoTwo.playVideo();
 })
 var audioClose = document.querySelector("#closeAudioPlayer");
 var audioOpen = document.querySelector("#openAudioPlayer");
@@ -160,12 +174,20 @@ aboutMeOpen.addEventListener("dblclick", function() {
     window.location.assign("aboutMe.html");
     aboutMeOpen.querySelector("a").style.background = "none";
 })
+var showroomOpen = document.querySelector("#openShowroom");
+showroomOpen.addEventListener("click", function() {
+    showroomOpen.querySelector("p").style.background = "white";
+})
+showroomOpen.addEventListener("dblclick", function() {
+    window.location.assign("showroom.html");
+    showroomOpen.querySelector("p").style.background = "none";
+})
 var openVideo1 = document.querySelector("#openVideo1");
 openVideo1.addEventListener("click", function() {
     openVideo1.querySelector("p").style = "text-decoration : underline";
 })
 openVideo1.addEventListener("dblclick", function() {
-    document.getElementById("videoInMainPlayer").src = "../assets/puppy.mp4";
+    document.getElementById("videoInMainPlayer").src = "https://www.youtube.com/embed/2B-XwPjn9YY?si=mV0UCIz15PNAFsUz&rel=0&controls=0&autoplay=1&modestbranding=1";
     openVideo1.querySelector("p").style = "text-decoration : none";
 })
 var openVideo2 = document.querySelector("#openVideo2");
@@ -173,7 +195,7 @@ openVideo2.addEventListener("click", function() {
     openVideo2.querySelector("p").style = "text-decoration : underline";
 })
 openVideo2.addEventListener("dblclick", function() {
-    document.getElementById("videoInMainPlayer").src = "../assets/beachPuppy.mp4";
+    document.getElementById("videoInMainPlayer").src = "https://www.youtube.com/embed/wRdl1BjTG7c?si=4zdszyAMybLLZgch&rel=0&controls=0&autoplay=1&modestbranding=1";
     openVideo2.querySelector("p").style = "text-decoration : none";
 })
 var openVideo3 = document.querySelector("#openVideo3");
@@ -181,7 +203,7 @@ openVideo3.addEventListener("click", function() {
     openVideo3.querySelector("p").style = "text-decoration : underline";
 })
 openVideo3.addEventListener("dblclick", function() {
-    document.getElementById("videoInMainPlayer").src = "../assets/tech.mp4";
+    document.getElementById("videoInMainPlayer").src = "https://www.youtube.com/embed/MnrJzXM7a6o?si=i5NSc9R9wOwBBQq-&rel=0&controls=0&autoplay=1&modestbranding=1";
     openVideo3.querySelector("p").style = "text-decoration : none";
 })
 
@@ -198,10 +220,10 @@ document.addEventListener('DOMContentLoaded', function() {
 function togglePlay(pauseImg, playImg, videoId) {
 let video = document.getElementById(videoId);
     if (!video.paused) {
-        video.pause();
+        video.pauseVideo();
         document.getElementById(videoId + "PlayButton").src = playImg;
     } else {
-        video.play();
+        video.playVideo();
         document.getElementById(videoId + "PlayButton").src = pauseImg;
     }
 }
@@ -216,16 +238,6 @@ function toggleVideoMute(mutedImg, unmutedImg, videoId) {
         document.getElementById(videoId + "MuteButton").src = unmutedImg;
     }
 }
-// MAIN VIDEO PROGRESS BAR
-document.addEventListener('DOMContentLoaded', function() {
-    var video = document.getElementById('videoInMainPlayer');
-    var progressBar = document.getElementById('mainVideoProgressBar');
-
-    video.addEventListener('timeupdate', function() {
-        var percentage = (video.currentTime / video.duration) * 100;
-        progressBar.style.width = percentage + '%';
-    });
-});
 // VIDEO TWO PROGRESS BAR
 document.addEventListener('DOMContentLoaded', function() {
     var video = document.getElementById('videoInPlayerTwo');
@@ -249,23 +261,66 @@ let audio = document.getElementById(audioId);
         document.getElementById(audioId + "PlayButton").src = pauseImg;
     }
 }
-const songSrcs = new Array("../assets/choir.mp3", "../assets/piano.mp3");
+const songSrcs = new Array("../assets/wonderland.mp3", "../assets/futurePerspectives.mp3", "../assets/robotics.mp3");
 const songMap = new Map();
-songMap.set("../assets/choir.mp3", "Choir Singing - The Choir");
-songMap.set("../assets/piano.mp3", "Piano that Plays");
-let audioElement = document.getElementById("audio1");
+songMap.set("../assets/wonderland.mp3", "Wonderland - David Reilly");
+songMap.set("../assets/futurePerspectives.mp3", "Future Perspectives - Anthony Hobson");
+songMap.set("../assets/robotics.mp3", "Robotics - Andy Clark");
 
-var forwardButton = document.getElementById("forwardButton");
-forwardButton.addEventListener("click", function() {
-    let currentTrack = audioElement.src;
-    let relativeTrack = currentTrack.substring(currentTrack.indexOf("../assets")); // Extract relative path
-    let currentPos = songSrcs.indexOf(relativeTrack);
-      currentPos = (currentPos + 1) % songSrcs.length; // Loop back to start if at the end
-    currentTrack = songSrcs[currentPos];
-    audioElement.src = currentTrack;
 
-    let marqueeText = songMap.get(currentTrack);
+function nextSong() {
+    var audioElement = document.getElementById("audio1");
+    var currentFullPath = audioElement.querySelector("source").src;
+    var substring = "InfoEraWebExperience/";
+    
+    var cIndex = currentFullPath.indexOf(substring);
+    var currentSrc = "../" + currentFullPath.substring(cIndex + substring.length);
+    var currentIndex = songSrcs.indexOf(currentSrc);
+
+    console.log(currentSrc);
+    console.log(currentIndex);
+    if (currentIndex == songSrcs.length - 1) {
+        currentIndex = -1;
+        }
+    currentIndex++;
+    currentSrc = songSrcs[currentIndex];
+    var currentTrack = songMap.get(currentSrc);
+    audioElement.querySelector("source").src = currentSrc;
+   
     document.querySelectorAll(".marquee").forEach(function(marqueeElement) {
-    marqueeElement.innerHTML = marqueeText;
-     });
-})
+        marqueeElement.innerHTML = currentTrack;
+    });
+    
+    audioElement.load();
+    audioElement.play();
+}
+function previousSong() {
+    var audioElement = document.getElementById("audio1");
+    var currentFullPath = audioElement.querySelector("source").src;
+    var substring = "InfoEraWebExperience/";
+    
+    var cIndex = currentFullPath.indexOf(substring);
+    var currentSrc = "../" + currentFullPath.substring(cIndex + substring.length);
+    var currentIndex = songSrcs.indexOf(currentSrc);
+
+    console.log(currentSrc);
+    console.log(currentIndex);
+    if (currentIndex == 0) {
+        currentIndex = 3;
+        }
+    currentIndex--;
+    currentSrc = songSrcs[currentIndex];
+    var currentTrack = songMap.get(currentSrc);
+    audioElement.querySelector("source").src = currentSrc;
+   
+    document.querySelectorAll(".marquee").forEach(function(marqueeElement) {
+        marqueeElement.innerHTML = currentTrack;
+    });
+    
+    audioElement.load();
+    audioElement.play();
+}
+// WARNING MESSAGE CLOSE
+document.getElementById("warning").addEventListener("click", function() {
+    document.getElementById("warning").style.display = "none";
+});
