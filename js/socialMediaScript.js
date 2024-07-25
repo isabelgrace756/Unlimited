@@ -76,13 +76,13 @@ $("#nextPage").on("mouseleave", function() {
 
 // LINKS
 $("#prevPage").on("click", function() {
-    window.location.assign('../public/theiPhone.html');
+    window.location.assign('https://unlimitedtheinfoera.com/theiPhone.html');
 });
 $("#goHome").on("click", function() {
-    window.location.assign('../public/index.html');
+    window.location.assign('https://unlimitedtheinfoera.com/index.html');
 });
 $("#nextPage").on("click", function() {
-    window.location.assign('../public/futures.html');
+    window.location.assign('https://unlimitedtheinfoera.com/futures.html');
 });
 
 // TIME RELEASED CSS EVOLVING STYLES
@@ -140,7 +140,7 @@ const videos = new Array("video1.mp4", "video2.mp4", "video3.mp4", "video5.mp4",
 $("#down").on("click", function() {
     var video = document.getElementById("currentVideo");
     var currentFullPath = video.querySelector("source").src;
-    var substring = "InfoEraWebExperience/socialMediaVideos/";
+    var substring = "../socialMediaVideos/";
     var cIndex = currentFullPath.indexOf(substring);
     var currentSrc = currentFullPath.substring(cIndex + substring.length);
     var currentIndex = videos.indexOf(currentSrc);
@@ -158,7 +158,7 @@ $("#down").on("click", function() {
 $("#up").on("click", function() {
     var video = document.getElementById("currentVideo");
     var currentFullPath = video.querySelector("source").src;
-    var substring = "InfoEraWebExperience/socialMediaVideos/";
+    var substring = "../socialMediaVideos/";
     var cIndex = currentFullPath.indexOf(substring);
     var currentSrc = currentFullPath.substring(cIndex + substring.length);
     var currentIndex = videos.indexOf(currentSrc);
