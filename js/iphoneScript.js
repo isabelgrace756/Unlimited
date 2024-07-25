@@ -217,7 +217,7 @@ $("#prevPage").on("click", function() {
     window.location.assign("y2k.html");
 });
 $("#goHome").on("click", function() {
-    window.location.assign("https://unlimitedtheinfoera.com/index.html");
+    window.location.assign(url("https://unlimitedtheinfoera.com/index.html"));
 });
 $("#nextPage").on("click", function() {
     window.location.assign("../socialMedia.html");
