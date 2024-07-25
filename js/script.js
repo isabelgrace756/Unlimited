@@ -261,24 +261,25 @@ let audio = document.getElementById(audioId);
         document.getElementById(audioId + "PlayButton").src = pauseImg;
     }
 }
-const songSrcs = new Array("../assets/wonderland.mp3", "../assets/futurePerspectives.mp3", "../assets/robotics.mp3");
+const songSrcs = new Array("assets/wonderland.mp3", "assets/futurePerspectives.mp3", "assets/robotics.mp3");
 const songMap = new Map();
-songMap.set("../assets/wonderland.mp3", "Wonderland - David Reilly");
-songMap.set("../assets/futurePerspectives.mp3", "Future Perspectives - Anthony Hobson");
-songMap.set("../assets/robotics.mp3", "Robotics - Andy Clark");
+songMap.set("assets/wonderland.mp3", "Wonderland - David Reilly");
+songMap.set("assets/futurePerspectives.mp3", "Future Perspectives - Anthony Hobson");
+songMap.set("assets/robotics.mp3", "Robotics - Andy Clark");
 
 
 function nextSong() {
     var audioElement = document.getElementById("audio1");
     var currentFullPath = audioElement.querySelector("source").src;
     var substring = "InfoEraWebExperience/";
+    console.log(currentFullPath);
     
     var cIndex = currentFullPath.indexOf(substring);
+    console.log(cIndex);
     var currentSrc = "../" + currentFullPath.substring(cIndex + substring.length);
+    console.log(currentSrc);
     var currentIndex = songSrcs.indexOf(currentSrc);
 
-    console.log(currentSrc);
-    console.log(currentIndex);
     if (currentIndex == songSrcs.length - 1) {
         currentIndex = -1;
         }
