@@ -2,9 +2,49 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Social Media</title>
+ <link rel="stylesheet" href="https://use.typekit.net/edz0vpb.css">
+ <link rel="stylesheet" href="../css/socialMediaStyles.css">
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-
+<div id="paywallPopupWindow"><div id="paywallContent"><h1>Sorry!</h1>You must be subscribed to view this content. Annoying, huh? Add this to your list of monthly subscriptions that just keeps getting longer. But you've gotta have everything instantly or else everything will fall apart! Subscribe now.
+<div id="subscribeButton"><div id="subscribeButtonText">SUBSCRIBE NOW!</div></div>
+</div>
+</div>
+<div id="overlay"></div>
+<div class="container">
+    <div class="box" id="navigationDiv">
+    <div id="prevPage">PREVIOUS PAGE</div>
+    <img src="../assets/starOne.png" id="starOne">
+    <div id="goHome">GO HOME</div>
+    <img src="../assets/starTwo.png" id="starTwo">
+    <div id="nextPage">NEXT PAGE</div>
+    <img src="../assets/starThree.png" id="starThree">
+    </div>
+    <div class="box marqueeContainer" id="leftMarquee"><div id="leftMarqueeText">BUY NOW! BUY NOW! BUY NOW! BUY NOW! BUY NOW! BUY NOW! SELL YOUR ATTENTION! BUY NOW! BUY NOW!</div></div>
+    <div class="box textBox" id="algorithmBlurb">Mobile phones and the Internet provide a feeling of freedom: the entire world is basically at your disposal. Infinite friends, infinite possibilities, infinite actions. It may feel like you are in control of the thing at your fingertips, but modern social media, when used improperly, ultimately takes away the autonomy of the user. We as people have become products. Our attention is the most valuable currency in a world where a glance means another dollar. But social media is fun. It provides a sense of comfort and connection. How can we better move forward?<br><span id="clickForTips" style="font-weight : bold">Click here for some tips on regaining control over your phone.</span></div>
+    <div class="box marqueeContainer" id="topMarquee"><div id="topMarqueeText">WE NEED YOUR ATTENTION NOW! WE NEED YOUR ATTENTION NOW! LOOK AT US! LOOK AT US! WE NEED YOUR ATTENTION NOW! WE NEED YOUR ATTENTION NOW!</div></div>
+    <div class="box" id="endlessScroll">
+    <video id="currentVideo" autoplay muted loop>
+    <source src="../socialMediaVideos/video1.mp4">
+    </video>
+    </div>
+    <div class="box textBox" id="microtrendsBlurb">Back in analog time, the economy could only move as fast as humans. Stores closed for the night, and newspapers were restricted by their pages. The digital economy introduced the idea of always being plugged in, always changing. Fast fashion retailers add hundreds of new styles daily to keep up with the endless evolution of style, pocketed in microtrends. Online purchases can arrive within hours, and within days, such purchases may already be out of style. Can items really be crafted well under these conditions?</div>
+    <div class="box marqueeContainer" id="rightMarquee"><div id="rightMarqueeText">YOU ARE THE PRODUCT. YOU ARE THE PRODUCT. YOU ARE THE PRODUCT. YOU ARE THE PRODUCT. YOU ARE THE PRODUCT. YOU ARE OURS TO MANIPULATE. YOU ARE THE PRODUCT.</div></div>
+    <div class="box textBox" id="polarizationBlurb">The algorithm uses your <span class="highlighted">PAST</span> to determine your <span class="highlighted">FUTURE.</span> It deepens your opinion by reinforcing and extremizing it until you live in a <span class="highlighted">DIGITAL ECHO CHAMBER.</span> Diversify the voices you hear and learn from. Remember that social media lives inside your devices. Use <span class="highlighted">REAL-WORLD INTERACTIONS</span> for thoughtful discourse instead of just arguing what you've read.</div>
+    <div class="box marqueeContainer" id="dollarMarquee"><div id="dollarMarqueeText">$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</div></div>
+    <div class="box" id="adsAndButtons">
+    <img src="../assets/upArrow.png" id="up" width="50px">
+    <img src="../assets/downArrow.png" id="down" width="50px">
+    <div id="ad">
+    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQF1XqpoBgsGck-teZsV3GaHy0obkMV6IYFGqx6UEa892CxK6nwpS24gqNwaZbPM8mPTqpDPSh7PoBsyIYNoTD0NMqVLGx2WgTREuZdWvgd0B1Ke_ynoWALAT_-w3WBClFA8IQuwA&usqp=CAc" width="200px">
+    <p>Cute 1pc Light Blue Beauty/Hair Salon SPA Headband $2.90</p>
+    </div>
+    </div>
+</div>
+<div id="warning"><h1>WARNING! Screens smaller than 1120px are not optimal for this experience.<br><br>This is an experimental website and may look horrendous on smaller screens. Click to proceed.</h1></div>
+<script src="../js/socialMediaScript.js"></script>
 </body>
 </html>
