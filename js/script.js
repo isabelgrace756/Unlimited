@@ -271,12 +271,12 @@ songMap.set("assets/robotics.mp3", "Robotics - Andy Clark");
 function nextSong() {
     var audioElement = document.getElementById("audio1");
     var currentFullPath = audioElement.querySelector("source").src;
-    var substring = "InfoEraWebExperience/";
+    var substring = "https://unlimitedtheinfoera.com/";
     console.log(currentFullPath);
     
     var cIndex = currentFullPath.indexOf(substring);
     console.log(cIndex);
-    var currentSrc = "../" + currentFullPath.substring(cIndex + substring.length);
+    var currentSrc = "/" + currentFullPath.substring(cIndex + substring.length);
     console.log(currentSrc);
     var currentIndex = songSrcs.indexOf(currentSrc);
 
@@ -298,10 +298,10 @@ function nextSong() {
 function previousSong() {
     var audioElement = document.getElementById("audio1");
     var currentFullPath = audioElement.querySelector("source").src;
-    var substring = "InfoEraWebExperience/";
+    var substring = "https://unlimitedtheinfoera.com/";
     
     var cIndex = currentFullPath.indexOf(substring);
-    var currentSrc = "../" + currentFullPath.substring(cIndex + substring.length);
+    var currentSrc = "/" + currentFullPath.substring(cIndex + substring.length);
     var currentIndex = songSrcs.indexOf(currentSrc);
 
     console.log(currentSrc);
