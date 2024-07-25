@@ -1,0 +1,312 @@
+@charset "UTF-8";
+body {
+	margin : 0;
+	overflow : hidden;
+	font-family : "roc-grotesk";
+	font-weight : 700;
+    cursor : url(../assets/coinCursor.png), auto;
+}
+#warning {
+    display : none;
+    width : 100vw;
+    height : 100vh;
+    background : #f17aff;
+    color : #e93800;
+    position : fixed;
+    z-index : 30000;
+}
+#warning h1 {
+    font-size : 40pt;
+    text-align : justify;
+    text-justify : inter-word;
+    padding : 20px;
+}
+@media (max-width: 1119px) {
+    #warning {
+        display : block;
+    }
+}
+.container {
+	display: grid;
+    grid-template-columns: 30vw 23vw 24vw 23vw; 
+    grid-template-rows: 8vh 30vh 8vh 46vh 8vh;
+}
+.box {
+	background-color: #0222c5;
+    border: 2px solid black;
+    box-sizing: border-box;
+}
+.textBox {
+	padding : 10px;
+    display : block;
+    background : white;
+    color : #0222c5;
+    font-weight : normal;
+}
+#navigationDiv {
+    grid-column : 1;
+    grid-row : 1 / 3;
+    font-size : 40pt;
+    overflow : hidden;
+}
+#leftMarquee {
+	grid-column : 1;
+	grid-row : 3;
+	background : #e93800;
+	color : #fffe23;
+}
+#algorithmBlurb {
+	grid-column : 1;
+	grid-row : 4 / 6;
+	overflow-y : scroll;
+}
+#clickForTips:hover {
+	text-decoration : underline;
+	cursor : pointer;
+}
+#topMarquee {
+    grid-column : 2 / 5;
+    grid-row : 1;
+    background : #fffe23;
+    color : #e93800;
+}
+#endlessScroll {
+	grid-column : 2;
+	grid-row : 2 / 6;
+	display : flex;
+}
+#microtrendsBlurb {
+    grid-column : 3 / 5;
+    grid-row : 2;
+    overflow-y : scroll;
+}
+#rightMarquee {
+    grid-column : 3 / 5;
+    grid-row : 3;
+    background : #f17aff;
+    color : #e93800;
+}
+#adsAndButtons {
+    grid-column : 3;
+    grid-row : 4;
+    background : white;
+    overflow-y : scroll;
+}
+#polarizationBlurb {
+	grid-column : 4;
+	grid-row : 4 / 6;
+	background : #0222c5;
+	color : white;
+	font-weight : bold;
+	overflow-y : scroll;
+	font-size : 14pt;
+}
+#dollarMarquee {
+	grid-column : 3;
+	grid-row : 5;
+	background : #5eca3b;
+}
+@keyframes marquee {
+     0% {
+       transform: translateX(0%);
+      }
+     100% {
+        transform: translateX(-100vw);
+      }
+}
+@keyframes marqueeR {
+     0% {
+       transform: translateX(-100vw);
+      }
+     100% {
+        transform: translateX(100%);
+      }
+}
+.marqueeContainer {
+    font-family: "roc-grotesk-wide", sans-serif;
+    font-weight: 700;
+    font-size : 30pt;
+    font-style: normal;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    overflow: hidden;
+    white-space: nowrap;
+}
+#topMarqueeText {
+     animation: marquee 60s linear infinite;
+}
+#leftMarqueeText {
+     animation: marquee 60s linear infinite;
+}
+#rightMarqueeText {
+	animation: marqueeR 60s linear infinite;
+}
+#dollarMarqueeText {
+    animation: marqueeR 60s linear infinite;
+    color : #f17aff;
+}
+@keyframes highlight {
+    from {
+      background-position: 0;
+    }
+
+    to {
+      background-position: -100%;
+    }
+}
+.highlighted {
+    animation-name: highlight;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    background-size: 200%;
+    background-image: linear-gradient(to right, #0222c5 50%, transparent 50%), 
+                      linear-gradient(transparent 50%, #e93800 50%);
+}
+#prevPage, #nextPage, #goHome {
+	font-family : "roc-grotesk-compressed";
+	font-weight : 700;
+    height : 33%;
+    width : full;
+    text-wrap : nowrap;
+    border : 2px solid black;
+    text-align : center;
+    background : white;
+}
+@keyframes spin {
+	0% { transform : rotate(20deg); }
+	50% { transform : rotate(0deg); }
+	100% { transform : rotate(-20deg); }
+}
+#starOne {
+	width : 200px;
+	z-index : 100;
+	position : fixed;
+	display : none;
+    animation : spin 2s infinite alternate linear;
+    animation-play-state : paused;
+}
+#starTwo {
+    width : 200px;
+    position : fixed;
+    z-index : 100;
+    display : none;
+    animation-play-state : paused;
+    animation : spin 2s infinite alternate linear;
+}
+#starThree {
+    width : 200px;
+    position : fixed;
+    z-index : 100;
+    display : none;
+    animation-play-state : paused;
+    animation : spin 2s infinite alternate linear;
+}
+#prevPage:hover {
+	background : linear-gradient(to left, #0222c5, #5eca3b, #fffe23, #e93800, #f17aff);
+}
+#goHome:hover {
+    background : linear-gradient(to left, #0222c5, #5eca3b, #fffe23, #e93800, #f17aff);
+}
+#nextPage:hover {
+    background : linear-gradient(to left, #0222c5, #5eca3b, #fffe23, #e93800, #f17aff);
+}
+#leftMarquee, #leftMarqueeText, #rightMarquee, #rightMarqueeText, #topMarquee, #topMarqueeText, #dollarMarquee, #dollarMarqueeText {
+	transition: background-color 2s, color 2s;
+}
+#paywallPopupWindow {
+	width : 400px;
+	height : 500px;
+	background : #f17aff;
+	text-align : center;
+	border : 5px solid black;
+	display : none;
+	position : fixed;
+	z-index : 10000;
+	top : calc(50% - 250px);
+	left : calc(50% - 200px);
+	padding : 20px;
+	font-family : "roc-grotesk";
+	font-weight : 300;
+}
+#paywallContent h1 {
+	font-size : 70pt;
+	font-family : "roc-grotesk-wide";
+	animation : spin 2s alternate infinite linear;
+	
+}
+#subscribeButtonText {
+	position : relative;
+	line-height : 0;
+	transition : color 1s;
+	top : 50%;
+}
+#subscribeButton {
+	font-family : "roc-grotesk";
+	font-weight : 700;
+	display : absolute;
+	background : #e93800;
+	color : #fffe23;
+	height : 50px;
+	left : calc(50% - 25px);
+	text-align : center;
+	margin-top : 25px;
+	padding : 10px;
+	font-size : 25pt;
+	text-wrap : nowrap;
+	transition : background-color 1s, color 1s;
+}
+#subscribeButton:hover {
+	background : linear-gradient(to left, #0222c5, #5eca3b, #fffe23, #e93800);
+	#subscribeButtonText {
+	   color : black;
+	}
+}
+#closePaywall {
+	font-size : 50pt;
+	font-weight : 700;
+	float : right;
+	line-height : 0;
+	margin-top : 20px;
+	background : #f17aff;
+}
+#closePaywall:hover {
+	cursor : pointer;
+}
+#overlay {
+	width : 100%;
+	height : 100%;
+	background : black;
+	opacity : 50%;
+	display : none;
+	z-index : 1000;
+	position : absolute;
+}
+video {
+	pointer-events : none;
+}
+#up {
+	position : fixed;
+	margin-left : 10px;
+	margin-top : 10px;
+	z-index : 51;
+}
+#down {
+    position : fixed;
+    margin-left : 10px;
+    margin-top : 70px;
+    z-index : 50;
+}
+#up:hover, #down:hover {
+	cursor : pointer;
+}
+@keyframes blink {
+	0% { opacity : 1; }
+    50% { opacity : 0; }
+    100% { opacity : 1; }
+}
+#ad {
+	padding : 10px;
+	text-align : center;
+    display : block;
+	animation : blink 2s infinite;
+}
