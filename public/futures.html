@@ -2,9 +2,241 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>What lies ahead?</title>
+<link rel="stylesheet" href="https://use.typekit.net/edz0vpb.css">
+ <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<style>
+@keyframes fontBreathe {
+    0% { font-variation-settings : "wght" 400, "wdth" 150; }
+    100% { font-variation-settings : "wght" 750, "wdth" 200; }
+}
+body {
+    text-align : center;
+    background-image: radial-gradient(#0222c5, #6666d0);
+    overflow : hidden;
+    margin: 0;
+    animation : unblur 2s ease;
+    animation-play-state : paused;
+    cursor : url(../assets/futureCursor.png), auto;
+}
+@keyframes unblur {
+    0% { filter : blur(50px); }
+    100% { filter : blur(0); }
+}
+h1 {
+    font-family : "roc-grotesk-variable", sans-serif;
+    font-variation-settings : "wght" 500, "wdth" 150;
+    animation : fontBreathe 4s infinite ease alternate;
+    font-size : 50pt;
+    line-height : 575px;
+    color : #fffe23;
+}
+@keyframes LtoR {
+    0% { transform : translateX(0); }
+    100% { left : calc(100% - 350px); }
+}
+@keyframes RtoL {
+    0% { left : calc(100% - 350px); }
+    100% { transform : translateX(0); }
+}
+#cloud1 {
+    position : absolute;
+    top : 0;
+    left : 0;
+    animation : LtoR 10s linear alternate infinite;
+}
+#cloud2 {
+    position : absolute;
+    top : 200px;
+    left : 150px;
+    animation : RtoL 15s linear alternate infinite;
+}
+#cloud3 {
+    position : absolute;
+    top : 450px;
+    left : 15px;
+    animation : LtoR 20s linear alternate infinite;
+}
+.pauseAnimations {
+    animation-play-state : paused;
+}
+.cloud:hover {
+    cursor : pointer;
+}
+p {
+    text-wrap : pretty;
+    width : 900px;
+    color : #fffe23;
+    font-family : "roc-grotesk-variable", sans-serif;
+    font-variation-settings : "wght" 400, "wdth" 100;
+    font-size : 16pt;
+    position : fixed;
+    top : 55vh;
+    left : 30vw;
+    display : none;
+}
+#cloudBack {
+    display : none;
+    position : absolute;
+    top : 40vh;
+    left : 100px;
+    cursor : pointer;
+}
+#learnMore {
+    display : none;
+    width : 300px;
+    position : relative;
+    bottom : 0px;
+    left : 50px;
+}
+h3 {
+    font-family : "roc-grotesk-variable", sans-serif;
+    color : #fffe23;
+    position : absolute;
+    top : 500px;
+    left : 45vw;
+}
+#warning {
+    top : 375px;
+    left : 14vw;
+}
+a {
+    font-family : "roc-grotesk-variable", sans-serif;
+    font-variation-settings : "wght" 500;
+    color : #fffe23;
+    font-size : 16pt;
+    position : fixed;
+    text-decoration : none;
+    filter : blur(2px);
+}
+a:hover {
+    text-decoration : underline;
+    filter : blur(0);
+    transition : .75s ease-in-out;
+}
+#goHome {
+    top : 20px;
+    right : 20px;
+}
+#prevPage {
+    top : 20px;
+    left : 20px;
+}
+@keyframes fadeIn {
+    0% { opacity : 0%; }
+    100% { opacity : 100%; }
+}
+#cloudOverlayBg {
+    z-index : -12;
+    mix-blend-mode : overlay;
+    position : fixed;
+    width : 2000px;
+    top : 0;
+    left : 0;
+    opacity : 0%;
+    animation : fadeIn 2s;
+    animation-delay : 3s;
+    animation-fill-mode : forwards;
+}
+</style>
 </head>
 <body>
-
+<h1>Where are we going?</h1>
+<img src="../assets/cloudOverlay.jpeg" id="cloudOverlayBg">
+<h3>Touch a cloud to learn more. Hover left or right to navigate pages.</h3>
+<h3 id="warning">NOTE: Most passages written by ChatGPT (in the spirit of AI)</h3>
+<a href="socialMedia.html" id="prevPage">Previous Page</a>
+<a href="index.html" id="goHome">Go Home</a>
+<img id="cloud1" class="cloud" src="../assets/cloud1.png" width="350px">
+<img id="cloud2" class="cloud" src="../assets/cloud2.png" width="350px">
+<img id="cloud3" class="cloud" src="../assets/cloud3.png" width="350px">
+<p id="p1">Humane's <span id="cloud1img1">AI Pin</span> represents a groundbreaking innovation in wearable technology, combining artificial intelligence with sleek, minimalist design to offer a unique, seamless user experience. The AI Pin is designed to be a discreet companion, clipping onto your clothing and providing intuitive assistance through <span id="cloud1img2">natural voice commands and gestures.</span> Unlike traditional smart devices, the AI Pin eschews screens, focusing instead on enhancing real-world interactions. It integrates advanced AI capabilities to understand and anticipate user needs, offering features such as instant translation, contextual reminders, and personalized information delivery. By embedding AI into everyday wearables, Humane aims to create a more natural and human-centric technology interface, fostering a harmonious blend of digital and physical worlds.</p>
+<p id="p2"><span id="cloud2img">The rise of AI in the design industry</span> has sparked concerns about its impact on designers' creativity. AI-powered tools can automate routine tasks, generate design elements, and even create entire layouts, potentially reducing the need for human input in the initial stages of the design process. While these technologies can enhance efficiency and consistency, they may also limit opportunities for designers to engage in creative problem-solving and experimentation. The fear is that reliance on AI could lead to homogenized aesthetics, stifling originality and the unique touch that human designers bring to their work. As AI continues to evolve, the challenge will be to find a balance where technology aids rather than replaces the creative instincts and nuanced decision-making that define great design.</p>
+<p id="p3">Integrating AI into our daily lives requires a great deal of balance and care. While many AI models and machines are <span id="cloud3img">pure novelty now, </span>they have the power to automate workflows to ensure mistakes aren't made in repetitive tasks. Meanwhile, human strength lies in creativity and its ability to break the mold. In order to best shift into the era of AI, we must use machines to complement our abilities, not dominate and overwrite them. It is in the mistakes and details that humans prove most creative, valuable, and unique.</p>
+<img src="../assets/cloudBack.png" id="cloudBack" width="200px">
+<img src="../assets/cloud1img1.jpg" id="learnMore">
+<script>
+$( document ).ready(function() {
+    document.querySelector("body").style = "animation-play-state : running;";
+});
+$(".cloud").on("mouseenter", function() {
+    $(".cloud").each(function() {
+	$(this).css("animation-play-state", "paused");
+    });
+});
+$(".cloud").on("mouseleave", function() {
+    $(".cloud").each(function() {
+	$(this).css("animation-play-state", "running");
+    });
+});
+$(".cloud").on("click", function() {
+    $(".cloud").each(function() {
+    $(this).css("display", "none");
+    $("#cloudBack").css("display", "block");
+    });
+    $("h3").css("display", "none");
+});
+$("#cloud1").on("click", function() {
+    document.querySelector("h1").style = "line-height : 80px;"
+    document.querySelector("h1").innerHTML = "Does wearable tech create<br> a barrier between us <br>and the world?";
+    document.getElementById("p1").style.display = "block";
+    document.getElementById("warning").innerHTML = "Knowing AI wrote these answers, can we trust their validity?";
+});
+$("#cloud2").on("click", function() {
+    document.querySelector("h1").style = "line-height : 80px;"
+    document.querySelector("h1").innerHTML = "What is AI's impact<br> on the people<br> who make<br> our products?";
+    document.getElementById("p2").style.display = "block";
+    document.getElementById("learnMore").src = "../assets/cloud2img.jpg";
+    document.getElementById("warning").innerHTML = "Do you see any trends in the aesthetics society favors that indicate we want to go back to the way things were?";
+});
+$("#cloud3").on("click", function() {
+    document.querySelector("h1").style = "line-height : 80px;"
+    document.querySelector("h1").innerHTML = "How can we<br>wisely integrate<br> AI into our lives?";
+    document.getElementById("p3").style.display = "block";
+    document.getElementById("warning").innerHTML = "Should AI have a visible impact on our lives or should we eliminate its visibility for a more peaceful existence?";
+});
+$("#cloudBack").on("click", function() {
+    $("p").css("display", "none");
+    document.getElementById("cloudBack").style.display = "none";
+    document.getElementById("learnMore").style.display = "none";
+    document.querySelector("h1").innerHTML = "Where are we going?";
+    document.querySelector("h1").style = "line-height : 575px";
+    $(".cloud").each(function() {
+	    $(this).css("display", "block");
+	    });
+    $("h3").css("display", "block");
+});
+$("#cloud1img1").on("mouseenter", function() {
+    document.getElementById("learnMore").style.display = "block";
+    document.getElementById("learnMore").src = "../assets/cloud1img1.jpg";
+});
+$("#cloud1img1").on("mouseleave", function() {
+    document.getElementById("learnMore").style.display = "none";
+});
+$("#cloud1img2").on("mouseenter", function() {
+    document.getElementById("learnMore").style.display = "block";
+    document.getElementById("learnMore").src = "../assets/cloud1img2.jpg";
+});
+$("#cloud1img2").on("mouseleave", function() {
+    document.getElementById("learnMore").style.display = "none";
+});
+$("#cloud2img").on("mouseenter", function() {
+    document.getElementById("learnMore").style.display = "block";
+    document.getElementById("learnMore").src = "../assets/cloud2img.jpg";
+});
+$("#cloud2img").on("mouseleave", function() {
+    document.getElementById("learnMore").style.display = "none";
+});
+$("#cloud3img").on("mouseenter", function() {
+    document.getElementById("learnMore").style.display = "block";
+    document.getElementById("learnMore").src = "../assets/cloud3img.jpg";
+    document.getElementById("learnMore").style.bottom = "-130px"
+});
+$("#cloud3img").on("mouseleave", function() {
+    document.getElementById("learnMore").style.display = "none";
+    document.getElementById("learnMore").style.bottom = "0px"
+});
+</script>
 </body>
-</htm
+</html>
