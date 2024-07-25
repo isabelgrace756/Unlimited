@@ -2,9 +2,85 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>The Nineties</title>
+<link rel="stylesheet" href="../css/90sStyles.css">
+ <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-
+<ul id="toolbar">
+<li id="prevPageLink"><a href="tvEra.html">Previous Page</a></li>
+<li id="homeLink"><a href="index.html">Go Home</a></li>
+<li id="nextPageLink"><a href="y2k.html">Next Page</a></li>
+<li id="currentTime"></li>
+</ul>
+<div id="chatWindow" class="window">
+<div class="windowHeader" id="chatWindowHeader"><span class="windowCloseButton" id="closeChat">X</span><span style="text-decoration : underline">C</span>hatroom</div>
+<div id="chatInsideWindow">
+<div id="chatContent">
+<form id="screenNameForm">
+<label for="screenName">ScreenName:</label><input id="screenName" type="text" placeholder="Enter here"><button id="enterButton">Enter</button></form>
+<p id="greeting"></p>
+<p id="userTopicAnswer"></p>
+<p class="userName"></p><p class="userSays"></p>
+<p id="topicAnswer"></p>
+<div id="topicChoices">
+<button id="currentEvents">Current Events</button>
+<button id="science">Science</button>
+<button id="celebs">Celebs</button>
+<button id="personalLife">Your Personal Life</button>
+</div>
+</div>
+</div>
+<form id="textForm"><input type="text" id="textBox"></form>
+</div>
+<div id="bulbyWindow" class="window">
+<div class="windowHeader" id="bulbyWindowHeader"><span class="windowCloseButton" id="closeBulby">X</span><span style="text-decoration : underline">B</span>ulby</div>
+<div id="bulbyContent">
+    <img src="../90sAssets/bulbyIcon.png" id="bigBulby">
+    <h2 id="welcomeText">Hi, I'm Bulby, your digital personal assistant! Here are some tips to help you stay sane with the arrival of the World Wide Web!</h2>
+    <p id="tips1">When you're done chatting with your friends online, you can just sign off!</p>
+    <p id="tips2">You are only available when this green dot <span style="color : #5eca3b">•</span> says you are.</p>
+    <p id="tips3">Be careful--this is a whole new world. You never know who is on the other side of the screen.</p>
+    <p id="tips4">Things take a while to load, but be patient, and a world wide web of opportunity will be open for you to explore.</p>
+</div>
+</div>
+<div id="audioWindow" class="window">
+<div class="windowHeader" id="audioWindowHeader"><span class="windowCloseButton" id="closeAudio">X</span><span style="text-decoration : underline">M</span>usic</div>
+<audio id="audio1" muted>
+<source src="../90sAssets/barbie.mp3">
+</audio>
+<div id="trackTitleBox"><h2 id="trackTitle">Barbie Secret Agent</h2><p id='theArtist'>Gameboy Color</p></div>
+<div id="audioButtonBar">
+<div class="audioButton" id="prevSongWrapper" onclick="previousSong()"><img src="../assets/back.png" id="prevSong" width="25px"></div>
+<div class="audioButton" id="playButtonWrapper" onclick="toggleAudioPlay('../assets/pauseButton.png', '../assets/playButton.png', 'audio1')"><img src="../assets/playButton.png" id="playButton" width="25px"></div>
+<div class="audioButton" id="nextSongWrapper" onclick="nextSong()"><img src="../assets/forward.png" id="nextSong" width="25px"></div></div>
+</div>
+<div id="openChat">
+<img src="../90sAssets/chatIcon.png" width="75px"><p>Chat</p>
+</div>
+<div id="openBrowser">
+<img src="../90sAssets/browserIcon.png" width="75px"><p>Browser</p>
+</div>
+<audio id="dialUp"><source src="../90sAssets/dialUp.ogg" type="audio/ogg"></audio>
+<audio id="chatBoop"><source src="../90sAssets/boop.wav" type="audio/wav"></audio>
+<div id="openBulby">
+<img src="../90sAssets/bulbyIcon.png" width="50px"><p>Bulby</p>
+</div>
+<div id="openAudio">
+<img src="../assets/audioPlayer.png" width="75px"><p>Music</p>
+</div>
+    <div id="browser" class="window">
+    <div class="windowHeader" id="browserWindowHeader"><span class="windowCloseButton" id="closeBrowser">X</span><span style="text-decoration : underline">W</span>orld Wide Web</div>
+        <ul id="links">
+            <li id="cameronsWorld"><img src="../90sAssets/webIcon.png" width="20px"><span style="text-decoration : underline">C</span>ameron's World</li>
+            <li id="melonLand"><img src="../90sAssets/webIcon.png" width="20px"><span style="text-decoration : underline">M</span>elonland Forum</li>
+            <li id="blueDwarf"><img src="../90sAssets/webIcon.png" width="20px"><span style="text-decoration : underline">B</span>lue Dwarf</li>
+        </ul>
+        <div id="splash"><img src="../90sAssets/browserLoading.gif" id="browserLoading"><h2>Browser loading...</h2></div>
+        <iframe id="browserFrame" src="https://www.cameronsworld.net/"></iframe>
+    </div>
+    <div id="warning"><h1>WARNING! Screens smaller than 1120px are not optimal for this experience.<br><br>This is an experimental website and may look horrendous on smaller screens. Click to proceed.</h1></div>
+<script src="../js/90sScripts.js"></script>
 </body>
 </html>
