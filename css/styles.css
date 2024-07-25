@@ -141,23 +141,6 @@ li a:visited {
 	width : 625px;
 	margin : auto;
 	border : 2px solid black;
-	pointer-events : none;
-}
-#controlBar {
-    position: absolute;
-    bottom: 0;
-    width: 625px;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-}
-#videoInMainPlayerPlayButton {
-    width : 25px;
-    height : 25px;
-}
-#videoInMainPlayerMuteButton {
-    width : 25px;
-    height : 25px;
 }
 #videoInPlayerTwo {
     display : flex;
