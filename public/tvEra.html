@@ -3,9 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Television</title>
-</head>
-<body>
-<audio muted autoplay loop id="audioElement"><source src="../assets/tvStatic.wav" type="audio/wav"></audio>
+ <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
 <style>
 @font-face {
     font-family: VCRMono; src: url('../fonts/VCR_OSD_MONO_1.001.ttf');
@@ -15,6 +13,27 @@ body {
     background-size : 1800px;
     overflow : hidden;
     font-family : VCRMono;
+    margin : 0;
+}
+#warning {
+    display : none;
+    width : 100vw;
+    height : 100vh;
+    background : black;
+    color : #f17aff;
+    position : fixed;
+    z-index : 30000;
+}
+#warning h1 {
+    font-size : 40pt;
+    text-align : justify;
+    text-justify : inter-word;
+    padding : 20px;
+}
+@media (max-width: 1119px) {
+    #warning {
+        display : block;
+    }
 }
 #frame {
     width : 850px;
@@ -45,9 +64,10 @@ a:visited { color : black }
 #videoInFrame {
     z-index : 15;
     position : fixed;
-    top : 150px;
+    top : 120px;
     left : 350px;
     object-fit : fill;
+    clip-path: inset(10px 80px 0px 0px);
 }
 #staticFilterVideo {
     z-index : 19;
@@ -56,7 +76,7 @@ a:visited { color : black }
     top : 150px;
     left : 350px;
 }
-#changeChannel { position : fixed; top : 250px; left : 475px; z-index : 18; text-wrap : nowrap }
+#changeChannel { position : fixed; top : 250px; left : 475px; z-index : 18; width : 400px }
 .muteButton {
     bottom : 15px;
     right : 10px;
@@ -159,12 +179,16 @@ a:visited { color : black }
     animation : blink 1s infinite;
 }
 </style>
+</head>
+<body>
+<audio muted autoplay loop id="audioElement"><source src="../assets/tvStatic.wav" type="audio/wav"></audio>
 <div id="toolbar">
 <ul><li><a href="theBeginning.html">Previous Page</a></li><li><a href="theNineties.html">Next Page</a></li></ul>
 </div>
 <div id="tvContainer">
 <img src="../assets/tvFrame.png" id="frame">
-<video src="../assets/stableBars.mp4" autoplay muted loop id="videoInFrame" height="450px" width="700px"></video>
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/Y62EgHvwa8k?si=OY_oiKMdjWgzA8Mp&amp;controls=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;rel=0&amp;controls=0&amp;frameborder=0&amp;modestbranding=1&amp;playlist=Y62EgHvwa8k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen id="videoInFrame"></iframe>
 <video src="../assets/staticFilter.mp4" autoplay muted loop id="staticFilterVideo" height="450px" width="700px"></video>
 <h1 id="changeChannel">Change the Channel</h1>
 <div id='channel1'></div>
@@ -177,6 +201,7 @@ a:visited { color : black }
 <div id='channel8'></div>
 </div>
 <img src="../assets/landingMuted.png" class="muteButton" onclick="toggleMute('../assets/landingMuted.png', '../assets/landingUnmuted.png')">
+<div id="warning"><h1>WARNING! Screens smaller than 1120px are not optimal for this experience.<br><br>This is an experimental website and may look horrendous on smaller screens. Click to proceed.</h1></div>
 <script>
 //MUTE BUTTON
 function toggleMute(mutedImg, unmutedImg) {
@@ -200,12 +225,51 @@ var channel6 = document.getElementById("channel6");
 var channel7 = document.getElementById("channel7");
 var channel8 = document.getElementById("channel8");
 var changeChannel = document.getElementById("changeChannel");
+var video = document.getElementById("videoInFrame");
 
 channel1.addEventListener("click", function() {
 	changeChannel.innerHTML = "Change the Channel";
+	changeChannel.style = "top : 250px; left : 475px; color : black";
+	video.src = "https://www.youtube.com/embed/Y62EgHvwa8k?si=bv_Uf-5Pt-JXDKU6&amp;controls=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;rel=0&amp;controls=0&amp;frameborder=0&amp;modestbranding=1&amp;playlist=Y62EgHvwa8k";
 });
 channel2.addEventListener("click", function() {
-    changeChannel.innerHTML = "HELLO, WORLD!";
+    changeChannel.innerHTML = "We have successfully brought escapism into your own home!<br>Spend hours in front of the television, avoiding reality!";
+    changeChannel.style = "top : 200px; left : 460px; width : 375px; color : #fffe23";
+    video.src = "https://www.youtube.com/embed/xhaKsgjbt1o?si=jQlsaMTZpWYQVNNw&amp;controls=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;rel=0&amp;controls=0&amp;frameborder=0&amp;modestbranding=1&amp;playlist=xhaKsgjbt1o";
+});
+channel3.addEventListener("click", function() {
+    changeChannel.innerHTML = "You are unlimited!<br>Three whole channels to explore!";
+    changeChannel.style = "top : 175px; left : 460px; width : 375px; color : #fffe23";
+    video.src = "https://www.youtube.com/embed/dqDopY5dMD8?si=n9igTp8SoXum7RZr&amp;controls=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;rel=0&amp;controls=0&amp;frameborder=0&amp;modestbranding=1&amp;playlist=dqDopY5dMD8";
+});
+channel4.addEventListener("click", function() {
+    changeChannel.innerHTML = "Television brings us together in a unifying experience.<br>Watch as history is made.";
+    changeChannel.style = "top : 175px; left : 460px; width : 375px; color : black";
+    video.src = "https://www.youtube.com/embed/cwZb2mqId0A?si=VEUFhsezfQyyDSyo&amp;controls=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;rel=0&amp;controls=0&amp;frameborder=0&amp;modestbranding=1&amp;playlist=cwZb2mqId0A";
+});
+channel5.addEventListener("click", function() {
+    changeChannel.innerHTML = "Homogenizing culture since 1927.";
+    changeChannel.style = "top : 175px; left : 460px; width : 375px; color : black";
+    video.src = "https://www.youtube.com/embed/jenWdylTtzs?si=mOHP_M5cI2Atju-n&amp;controls=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;rel=0&amp;controls=0&amp;frameborder=0&amp;modestbranding=1&amp;playlist=jenWdylTtzs";
+});
+channel6.addEventListener("click", function() {
+    changeChannel.innerHTML = "The world is grander and wider than you ever imagined.";
+    changeChannel.style = "top : 175px; left : 460px; width : 375px; color : black";
+    video.src = "https://www.youtube.com/embed/17vYiDOIGFM?si=tR-UmQz3KqA7WNxO&amp;controls=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;rel=0&amp;controls=0&amp;frameborder=0&amp;modestbranding=1&amp;playlist=17vYiDOIGFM";
+});
+channel7.addEventListener("click", function() {
+    changeChannel.innerHTML = "Visualize the music that shapes you from your living room!";
+    changeChannel.style = "top : 175px; left : 460px; width : 375px; color : black";
+    video.src = "https://www.youtube.com/embed/6jcdwiV6dXw?si=dldtrHAYRHUr1Y8l&amp;controls=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;rel=0&amp;controls=0&amp;frameborder=0&amp;modestbranding=1&amp;playlist=6jcdwiV6dXw";
+});
+channel8.addEventListener("click", function() {
+    changeChannel.innerHTML = "POWERING OFF...You may return to reality.";
+    changeChannel.style = "top : 225px; left : 460px; width : 375px; color : black";
+    video.src = "https://www.youtube.com/embed/bf7NbRFyg3Y?si=lX7VcfDfmAuQw3Si&amp;controls=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;rel=0&amp;controls=0&amp;frameborder=0&amp;modestbranding=1&amp;playlist=bf7NbRFyg3Y";
+});
+//WARNING MESSAGE CLOSE
+document.getElementById("warning").addEventListener("click", function() {
+    document.getElementById("warning").style.display = "none";
 });
     </script>
 </body>
