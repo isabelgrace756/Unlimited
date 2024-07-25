@@ -216,17 +216,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-    var player;
-
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('videoInMainPlayer', {
-                events: {
-                    'onReady': onPlayerReady
-                }
-            });
-        }
 // VIDEO PLAY BUTTON
-function togglePlay(pauseImg, playImg, videoId) {
+/* function togglePlay(pauseImg, playImg, videoId) {
 let video = document.getElementById(videoId);
     var state = player.getPlayerState();
     if (state === YT.PlayerState.PLAYING) {
@@ -236,9 +227,9 @@ let video = document.getElementById(videoId);
         player.playVideo();
         document.getElementById(videoId + "PlayButton").src = pauseImg;
     }
-}
+}*/
 // VIDEO MUTE BUTTON
-function toggleVideoMute(mutedImg, unmutedImg, videoId) {
+/* function toggleVideoMute(mutedImg, unmutedImg, videoId) {
     let video = document.getElementById(videoId);
     if (!video.muted) {
         video.muted = true;
@@ -257,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var percentage = (video.currentTime / video.duration) * 100;
         progressBar.style.width = percentage + '%';
     });
-});
+});*/
 // AUDIO PLAY BUTTON
 function toggleAudioPlay(pauseImg, playImg, audioId) {
 let audio = document.getElementById(audioId);
