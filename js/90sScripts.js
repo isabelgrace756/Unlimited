@@ -282,7 +282,7 @@ function nextSong() {
     
     var cIndex = currentFullPath.indexOf(substring);
     console.log(cIndex);
-    var currentSrc = "../" + currentFullPath.substring(cIndex + substring.length);
+    var currentSrc = substring + currentFullPath.substring(cIndex + substring.length);
     var currentIndex = songSrcs.indexOf(currentSrc);
 
     console.log(currentSrc);
@@ -308,7 +308,7 @@ function previousSong() {
     var substring = "https://unlimitedtheinfoera.com/";
     
     var cIndex = currentFullPath.indexOf(substring);
-    var currentSrc = "../" + currentFullPath.substring(cIndex + substring.length);
+    var currentSrc = substring + currentFullPath.substring(cIndex + substring.length);
     var currentIndex = songSrcs.indexOf(currentSrc);
 
     console.log(currentSrc);
