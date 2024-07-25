@@ -214,10 +214,10 @@ $("#homeButton").on("click", function() {
     });
 });
 $("#prevPage").on("click", function() {
-    window.location.assign("../public/y2k.html");
+    window.location.assign("y2k.html");
 });
 $("#goHome").on("click", function() {
-    window.location.assign("../public/index.html");
+    window.location.assign("https://unlimitedtheinfoera.com/index.html");
 });
 $("#nextPage").on("click", function() {
     window.location.assign("../public/socialMedia.html");
