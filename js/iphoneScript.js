@@ -220,7 +220,7 @@ $("#goHome").on("click", function() {
     window.location.assign("https://unlimitedtheinfoera.com/index.html");
 });
 $("#nextPage").on("click", function() {
-    window.location.assign("../public/socialMedia.html");
+    window.location.assign("../socialMedia.html");
 });
 // WARNING MESSAGE CLOSE
 document.getElementById("warning").addEventListener("click", function() {
