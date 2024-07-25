@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Showroom</title>
+<link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+<link rel="stylesheet" href="https://use.typekit.net/edz0vpb.css">
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+@font-face {
+    font-family: FindersKeepers; src: url('../fonts/FindersKeepers.ttf');
+}
+body {
+    font-family : FindersKeepers;
+    background : black;
+    color : #5eca3b;
+    margin : 0;
+    overflow-x : hidden;
+}
+#one {
+    height : 300px;
+}
+h1 {
+    text-align : justify;
+    font-size : 125pt;
+    margin-left : 30px;
+    margin-top : 0;
+    margin-bottom : 20px;
+}
+h3 {
+    position : absolute;
+    top : 200px;
+    width : 300px;
+    left : 700px;
+    margin-top : 0;
+    display : none;
+}
+.container {
+    display : grid;
+    grid-template-columns: 25% 25% 25% 25%; 
+    grid-template-rows: 50px 300px 50px;
+    grid-row-gap : 30px;
+    position : relative;
+    background : black;
+}
+.linkContainer {
+    display : grid;
+    grid-template-columns: 25% 25% 25% 25%; 
+    grid-template-rows: 100px 10px 150px;
+    grid-row-gap : 20px;
+    padding-right : 10px;
+    position : relative;
+    background : black;
+}
+.imgAndLinkContainer {
+    display : grid;
+    grid-template-columns: 25% 25% 25% 25%; 
+    grid-template-rows: 50px 300px 10px 150px;
+    grid-row-gap : 20px;
+    position : relative;
+    background : black;
+}
+.box {
+    font-size : 16pt;
+    font-weight : 800;
+    text-align : justify;
+    text-justify : inter-word;
+    padding-left : 20px;
+    padding-right : 20px;
+}
+.title {
+    font-size : 50pt;
+    text-align : left;
+    font-weight : bold;
+    margin-left : 20px;
+}
+.subtitle {
+    text-align : center;
+}
+.sticky {
+    position : sticky;
+    top : 0;
+    width : auto;
+}
+#booksTitle {
+    grid-column : 1 / 5;
+    grid-row : 1;
+}
+#websitesTitle {
+    grid-column : 1 / 5;
+    grid-row : 1;
+}
+#phoneFeaturesTitle {
+    grid-column : 1 / 5;
+    grid-row : 1;
+}
+#analogTitle {
+    grid-column : 1 / 5;
+    grid-row : 1;
+}
+img {
+    margin : auto;
+    left : 50%;
+}
+a {
+    font-size : 16pt;
+    text-decoration : none;
+    color : #5eca3b;
+}
+a:hover {
+    text-decoration : underline;
+}
+.spacer {
+    height : 275px;
+    background : black;
+}
+.spacer h2 {
+    font-size : 130pt;
+    font-weight : bold;
+    padding-left : 100px;
+}
+.spacer a {
+    font-size : 50pt;
+    position : absolute;
+    top : 100px;
+    right : 100px;
+}
+#one a {
+    padding-left : 40px;
+    font-size : 50pt;
+}
+</style>
+</head>
+<body>
+
+<div id='one'>
+<h1></h1>
+<h3>A COMPILED LIST OF RESOURCES TO COMBAT THE ATTENTION ECONOMY.</h3><a href="../public/index.html">GO HOME</a></div>
+<div id="two" class="container">
+<div class="box title" id="booksTitle">> Books</div>
+<img class="box" src="https://m.media-amazon.com/images/I/81x+9opgESL._AC_UF1000,1000_QL80_.jpg" height="300px">
+<img src="https://m.media-amazon.com/images/I/61hCBU8MOGL._AC_UF1000,1000_QL80_.jpg" class="box" height="300px">
+<img src="https://m.media-amazon.com/images/I/71RBLJqxqNL._AC_UF1000,1000_QL80_.jpg" class="box" height="300px">
+<img src="https://m.media-amazon.com/images/I/61fKHGJ2rJL._AC_UF1000,1000_QL80_.jpg" class="box" height="300px">
+<a class="box subtitle" href="https://calnewport.com/wp-content/uploads/2018/12/digitalMinimalism_HC_3d-640px.jpg">DIGITAL MINIMALISM : CAL NEWPORT</a>
+<a class="box subtitle" href="https://www.amazon.com/How-Break-Up-Your-Phone/dp/039958112X">HOW TO BREAK UP WITH YOUR PHONE : CATHERINE PRICE</a>
+<a class="box subtitle" href="https://www.simonandschuster.com/books/Please-Unsubscribe-Thanks!/Julio-Vincent-Gambuto/9781668009543">PLEASE UNSUBSCRIBE, THANKS! : JULIO VINCENT GAMBUTO</a>
+<a class="box subtitle" href="https://adamalterauthor.com/irresistible">IRRESISTIBLE : ADAM ALTER</a></div>
+<div class="spacer"></div>
+<div id="three" class="container">
+<div class="box title" id="phoneFeaturesTitle">> iPhone Features</div>
+<img class="box" src="https://help.apple.com/assets/65E21662495F1A6C8701F50A/65E21663EF8273BE1D0C2734/en_US/7be42f9e0c9426d9513766612d33ee67.png" height="300px">
+<img src="https://images.squarespace-cdn.com/content/v1/5de17f2a5784972daace53de/ebc82aa1-a277-4fc4-991b-87e3993e1d9d/Untitled.png" class="box" height="300px">
+<img src="../assets/grayscalePhone.png" class="box" height="300px">
+<img src="../assets/blankSpaces.png" class="box" height="300px">
+<a class="box subtitle" href="https://support.apple.com/guide/iphone/turn-a-focus-on-or-off-iph5c3f5b77b/ios">FOCUS MODES</a>
+<a class="box subtitle" href="https://www.macrumors.com/how-to/use-notification-summary/">SCHEDULED NOTIFICATION SUMMARIES</a>
+<a class="box subtitle" href="https://www.apartmenttherapy.com/grayscale-iphone-266894">GRAYSCALE FILTER</a>
+<a class="box subtitle" href="https://apps.apple.com/us/app/blank-spaces-minimal-launcher/id1570856853">BLANK SPACES DUMBPHONE WIDGET</a>
+</div>
+
+<div id="four" class="imgAndLinkContainer">
+<div class="box title" id="analogTitle">> Analog Tools</div>
+<img src="../assets/sunriseClock.png" height="300px" class="box">
+<img src="https://images.squarespace-cdn.com/content/v1/519fb289e4b0e155dad7ba7c/1468346735981-HXRCJUBWSE3C4KZK0OI2/Field+Notes+-+Main.png?format=1000w" height="300px" class="box">
+<img src="https://www.evoracompany.com/cdn/shop/files/DSC00033_grande.jpg?v=1719434264" height="300px" style="border-radius : 30px" class="box">
+<img src="https://brewminate.com/wp-content/uploads/2016/09/LibraryCard02.png" height="300px" style="border-radius : 30px" class="box">
+<a class="box" href="https://www.amazon.com/Sunrise-Sleepers-Simulation-Nightlight-Daylight/dp/B081CHLF46?th=1">SUNRISE ALARM CLOCK</a>
+<a class="box" href="https://fieldnotesbrand.com/?gad_source=1&gclid=Cj0KCQjwkdO0BhDxARIsANkNcrfYd5WiiuNzcCfXzCv-Z1lPIp2ii6RiGVNExpAdgGl29YJbY6FL7UIaAsHwEALw_wcB">FIELD NOTES JOURNALS</a>
+<a class="box" href="https://www.evoracompany.com/">EVORA WATCHES</a>
+<a class="box" href="https://librarytechnology.org/libraries/uspublic/">PUBLIC LIBRARY</a>
+<p class="box">Place your phone across the room at night and wake up slowly with natural light.</p>
+<p class="box">Field Notes are cheap, non-daunting notebooks that act as a catch-all for your daily lists, thoughts, and plans. Any notebook will do, but if you're new to organizing everything on paper, these are a great start at only 48 pages.</p>
+<p class="box">Evora Watches are customizable with multiple modes and pieces of information all in one watch face. It's a perfect blend of vital information at a glance to keep you from pulling out your phone to check the time or date and getting distracted by notifications.</p>
+<p class="box">Libraries are one of the best resources for anything you want to know. Instead of a Google deep dive, why not skim a book from the library? And if you need something to fill your time after digital decluttering, libraries are the way to go.</p>
+</div>
+
+<div id="five" class="linkContainer">
+<div class="box title" id="websitesTitle">> Websites</div>
+<a class="box" href="https://dumbphones.org/">DUMBPHONE FINDER</a>
+<a class="box" href="https://www.stayfocusd.com/">STAYFOCUSD</a>
+<a class="box" href="https://www.newsminimalist.com/">NEWSMINIMALIST</a>
+<a class="box" href="https://www.reddit.com/r/digitalminimalism/">r/DIGITALMINIMALISM</a>
+<p class="box">Created by Jose Briones, the Dumbphone Finder is a great resource for anyone looking for a non-smartphone to fulfill their phone-related needs. Filter by any apps you are set on keeping and any features that are important to you and Dumbphone Finder will find the perfect companion for you.</p>
+<p class="box">StayFocusd is the ultimate Chrome extension for blocking distracting websites. Choose which sites you want to block, or choose the few you want to allow, and schedule your site-blocking time depending on how many hours and days you need more focus. The extension requires you to complete a challenge (i.e. typing a 500 word paragraph from prompt) to access blocked sites, giving you a minute to consider your intention before breaking your focus.</p>
+<p class="box">NewsMinimalist uses ChatGPT to read the top stories of the day and rates them with a "significance score" depending on magnitude, scale, and novelty. This weighted score is then used to compile the most significant stories so you can filter through the noise of news media.</p>
+<p class="box">My deepest apologies for adding a Reddit page on this site, BUT an important part of making digital minimalism work is having a support system of people learning with you.</p>
+</div>
+<div class="spacer container">
+<h2>UNPLUG.</h2>
+<a href="../public/index.html">GO HOME</a>
+</div>
+<script>
+const text = "Welcome to the showroom.";
+
+const h1 = document.querySelector('h1');
+
+function typeWriter(text, i) {
+    if (i < text.length) {
+        h1.textContent += text.charAt(i);
+        i++;
+        setTimeout(() => typeWriter(text, i), 100);
+    }
+}
+
+typeWriter(text, 0);
+setTimeout(function() {
+    $("h3").css("display", "block")}, 3000);
+
+(function($){
+var one = $("#one");
+var oneTop = one.position().top;
+var two = $("#two");
+var twoTop = two.position().top;
+var three = $("#three");
+var threeTop = three.position().top;
+var four = $("#four");
+var fourTop = four.position().top;
+var five = $("#five");
+var fiveTop = five.position().top;
+$(window).scroll(function() {
+    var st = $(window).scrollTop();
+    if (st >= oneTop) {
+	   one.addClass("sticky");
+    } else {
+	   one.removeClass("sticky");
+    }
+    if (st >= twoTop) {
+	       two.addClass("sticky");
+	    } else {
+	       two.removeClass("sticky");
+	    }
+    if (st >= threeTop) {
+	       three.addClass("sticky");
+	    } else {
+	       three.removeClass("sticky");
+	    }
+    if (st >= fourTop) {
+        four.addClass("sticky");
+     } else {
+        four.removeClass("sticky");
+     }
+    if (st >= fiveTop) {
+        five.addClass("sticky");
+     } else {
+        five.removeClass("sticky");
+     }
+});
+})(window.jQuery);
+</script>
+</body>
+</html>
