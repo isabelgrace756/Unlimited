@@ -139,10 +139,9 @@ const videos = new Array("video1.mp4", "video2.mp4", "video3.mp4", "video5.mp4",
 
 $("#down").on("click", function() {
     var video = document.getElementById("currentVideo");
-  console.log(video);
     var currentFullPath = video.querySelector("source").src;
   console.log(currentFullPath);
-    var substring = "../socialMediaVideos/";
+    var substring = "/socialMediaVideos/";
     var cIndex = currentFullPath.indexOf(substring);
   console.log(cIndex);
     var currentSrc = currentFullPath.substring(cIndex + substring.length);
@@ -164,7 +163,7 @@ $("#down").on("click", function() {
 $("#up").on("click", function() {
     var video = document.getElementById("currentVideo");
     var currentFullPath = video.querySelector("source").src;
-    var substring = "../socialMediaVideos/";
+    var substring = "/socialMediaVideos/";
     var cIndex = currentFullPath.indexOf(substring);
     var currentSrc = currentFullPath.substring(cIndex + substring.length);
     var currentIndex = videos.indexOf(currentSrc);
