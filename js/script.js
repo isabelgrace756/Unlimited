@@ -216,15 +216,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+    var player;
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('videoInMainPlayer', {
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
 // VIDEO PLAY BUTTON
 function togglePlay(pauseImg, playImg, videoId) {
 let video = document.getElementById(videoId);
-    var state = video.getPlayerState();
+    var state = player.getPlayerState();
     if (state === YT.PlayerState.PLAYING) {
-        video.pauseVideo();
+        player.pauseVideo();
         document.getElementById(videoId + "PlayButton").src = playImg;
     } else {
-        video.playVideo();
+        player.playVideo();
         document.getElementById(videoId + "PlayButton").src = pauseImg;
     }
 }
