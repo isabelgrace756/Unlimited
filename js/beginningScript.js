@@ -51,4 +51,8 @@ nextPage.addEventListener("mouseover", function() {
 nextPage.addEventListener("mouseleave", function() {
     nextPageText.style.right = "-300vw";
 });
+// WARNING MESSAGE CLOSE
+document.getElementById("warning").addEventListener("click", function() {
+    document.getElementById("warning").style.display = "none";
+});
     
