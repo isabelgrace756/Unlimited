@@ -1,0 +1,394 @@
+@charset "UTF-8";
+@font-face {
+    font-family: FindersKeepers; src: url('../fonts/FindersKeepers.ttf');
+}
+@font-face {
+    font-family: PixelTNR; src: url('../fonts/pixelated-times-new-roman.ttf');
+}
+body {
+    background : #008080;
+    overflow : hidden;
+    font-family : FindersKeepers;
+    margin : 0;
+    -webkit-font-smoothing: none;
+}
+#warning {
+    display : none;
+    width : 100vw;
+    height : 100vh;
+    background : #0222c5;
+    color : white;
+    position : fixed;
+    z-index : 30000;
+}
+#warning h1 {
+    font-size : 40pt;
+    text-align : justify;
+    text-justify : inter-word;
+    padding : 20px;
+}
+@media (max-width: 1119px) {
+    #warning {
+        display : block;
+    }
+}
+#toolbar {
+    background: rgba(195,195,195,1);
+    width : 100%;
+    border-bottom : 2px solid black;
+    border-top : 2px solid white;
+    height : 30px;
+    display : flex;
+}
+@media (max-width: 600px) {
+    #currentTime {
+        display : none;
+    }
+}
+ul {
+    list-style-type : none;
+    font-size : 20pt;
+    margin : 0;
+    padding : 0;
+    position : fixed;
+    bottom : 0;
+    z-index : 100;
+}
+li {
+    display : inline;   
+    margin : 3px 5px 5px 0;
+    height : 23px;
+    padding-right : 65px;
+    box-shadow : -2px -2px 2px white, 2px 2px 2px black;
+    padding-left : 10px;
+    cursor : pointer;
+}
+li:hover {
+	box-shadow : -2px -2px 2px black, 2px 2px 2px white, inset 0 0 2px black;
+	border : 1px dashed black;
+}
+li a:link {
+    color : black;
+    text-decoration : none;
+}
+li a:visited {
+    color : black;
+}
+#currentTime {
+	padding-right : 5px;
+	position : fixed;
+	right : 5px;
+}
+#currentTime:hover {
+	box-shadow : -2px -2px 2px white, 2px 2px 2px black;
+	cursor : default;
+	border : none;
+}
+.window {
+    position : absolute;
+    background : rgba(195,195,195,1);
+    width : flex;
+    box-shadow : -2px -2px 2px white, 2px 2px 2px black;
+    padding : 5px;
+}
+.windowHeader {
+    cursor : move;
+    padding: 7px;
+    background-color : #0222c5;
+    color : white;
+    font-size : 20pt;
+}
+.windowCloseButton {
+    font-size : 15pt;
+    float : right;
+    cursor : pointer;
+    width : 20px;
+    box-shadow : -1px -1px 1px white, 1px 1px 1px black;
+    background-color : rgba(195,195,195,1);
+    color : black;
+    text-align : center;
+}
+.windowCloseButton:hover {
+	box-shadow : -1px -1px 1px black, 1px 1px 1px white, inset 0 0 2px black;
+}
+#chatWindow {
+    width : 500px;
+    height : 430px;
+    z-index : 30;
+    top : 150px;
+    left : 125px;
+    display : none;
+}
+#chatInsideWindow {
+	background-color : white;
+    box-shadow : inset 0 0 4px black;
+    width : 100%;
+    height : 60%;
+    overflow-y : scroll;
+    margin-top : 5px;
+    margin-bottom : 5px;
+    display : flex;
+    flex-direction : column-reverse;
+    overflow-y : scroll;
+}
+#openChat {
+    left : 30px;
+    top : 40px;
+    position : fixed;
+    text-align : center;
+}
+#openChat p {
+    margin : auto;
+    font-size : 20pt;
+    color : white;
+}
+#openBrowser {
+    left : 30px;
+    top : 150px;
+    position : fixed;
+    text-align : center;
+}
+#openBrowser p {
+    margin : auto;
+    font-size : 20pt;
+    color : white;
+}
+#openBulby {
+    left : 40px;
+    top : 275px;
+    position : fixed;
+    text-align : center;
+}
+#openBulby p {
+    margin : auto;
+    font-size : 20pt;
+    color : white;
+}
+#openAudio {
+    left : 30px;
+    top : 400px;
+    position : fixed;
+    text-align : center;
+}
+#openAudio p {
+    margin : auto;
+    font-size : 20pt;
+    color : white;
+}
+#bulbyWindow {
+    width : 400px;
+    height : 330px;
+    z-index : 30;
+    top : 50px;
+    right : 60px;
+    display : block;
+}
+#bulbyContent {
+	background-color : white;
+	box-shadow : inset 0 0 4px black;
+	width : 100%;
+	height : calc(100% - 43px);
+	overflow-y : scroll;
+	margin-top : 5px;
+	margin-bottom : 5px;
+}
+#browser {
+    width: 800px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    display : none;
+    top : 100px;
+    left : 100px;
+}
+#splash {
+	display : block;
+	background-color : white;
+	width : 100%;
+	height : calc(100% - 65px);
+	text-align : center;
+	box-shadow : inset 0 0 4px black;
+	margin-bottom: 10px;
+}
+#browserLoading {
+	width : 150px;
+	position : relative;
+	top : 150px;
+}
+#splash h2 {
+	position : relative;
+	top : 140px;
+}
+iframe {
+    width: 100%;
+    height: calc(100% - 65px);
+    border: none;
+    background-color : white;
+    box-shadow : inset 0 0 4px black;
+    margin-bottom : 10px;
+}
+#links {
+    list-style-type : none;
+    font-size : 20pt;
+    margin : 0;
+    padding : 0;
+    position : relative;
+    top : 0;
+    z-index : 29;
+}
+#links li {
+    display : inline;   
+    font-size : 18pt;
+    height : 30px;
+    border : none;
+    box-shadow : none;
+    cursor : pointer;
+}
+#bigBulby {
+	width : 50px;
+	position : relative;
+	top : 10px;
+	left : 10px;
+	margin-bottom : 15px;
+}
+#welcomeText {
+	display : none;
+	font-size : 14pt;
+	color : #0222c5;
+	position : absolute;
+	left : 80px;
+	top : 50px;
+	width : 250px;
+}
+::selection {
+  background: #0222c5;
+  color : white;
+}
+#tips1 {
+	display : none;
+	margin : 10px;
+	font-size : 14pt;
+}
+#tips2 {
+    display : none;
+    margin : 10px;
+    font-size : 14pt;
+}
+#tips3 {
+    display : none;
+    margin : 10px;
+    font-size : 14pt;
+}
+#tips4 {
+    display : none;
+    margin : 10px;
+    font-size : 14pt;
+}
+label {
+	color : #0222c5;
+	font-weight : bold;
+	font-size : 16pt;
+	margin-left : 10px;
+}
+#screenName{
+	margin-top : 10px;
+	display : inline;
+	margin-left : 10px;
+	outline : none;
+}
+#screenName:focus {
+	border-color : black;
+}
+#enterButton {
+	margin-left : 5px;
+}
+.YourFriend95 {
+	font-weight : bold;
+	color : #e93800;
+	font-size : 16pt;
+}
+#textBox {
+	height : 115px;
+	width : 99%;
+	outline : none;
+	border : none;
+    box-shadow : inset 0 0 4px black;
+    margin-top : 5px;
+    margin-right : 5px;
+    margin-bottom : 5px;
+}
+#topicChoices {
+	margin-left : 10px;
+	display : none;
+}
+.userName {
+    font-weight : bold;
+    color : #0222c5;
+}
+.text {
+	font-weight : normal;
+	color : black;
+	width : 90%;
+}
+#chatContent {
+	margin-left : 10px;
+	padding-bottom : 10px;
+	font-size : 16pt;
+}
+#audioWindow {
+    width : 400px;
+    height : 185px;
+    z-index : 3;
+    bottom : 50px;
+    right : 60px;
+    display : block;
+}
+#trackTitleBox {
+	background : black;
+	height : 75px;
+	width : 99%;
+	margin-top : 5px;
+	border : inset gray 2px;
+	color : #5eca3b;
+}
+#trackTitle {
+	font-size : 16pt;
+	margin-left : 10px;
+	line-height : 0;
+}
+#theArtist {
+	font-size : 14pt;
+	margin-left : 10px;
+}
+#audioButtonBar {
+	border : inset gray 2px;
+	margin-top : 5px;
+	display : flex;
+	justify-content : space-between;
+}
+.audioButton:active {
+	box-shadow : -2px -2px 2px black, 2px 2px 2px white, inset 0 0 2px black;
+	background : linear-gradient(to bottom, #202020 9%, rgba(195,195,195,1) 10%, rgba(195,195,195,1) 30%, rgba(195,195,195,1) 89%, #202020 90%);
+}
+.audioButton {
+	background : linear-gradient(to bottom, white 9%, rgba(195,195,195,1) 10%, rgba(195,195,195,1) 30%, rgba(195,195,195,1) 89%, #202020 90%);
+	height : 50px;
+	width : 100%;
+	text-align : center;
+	display : inline-block;
+	justify-content : space-evenly;
+}
+#prevSongWrapper {
+	cursor : pointer;
+	border-right : 5px solid black;
+}
+#playButtonWrapper {
+	border-right : 5px solid black;
+	cursor : pointer;
+}
+#nextSongWrapper {
+	cursor : pointer;
+}
+#prevSong, #playButton, #nextSong {
+	margin-top : 10px;
+}
