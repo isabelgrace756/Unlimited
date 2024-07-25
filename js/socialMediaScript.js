@@ -139,17 +139,23 @@ const videos = new Array("video1.mp4", "video2.mp4", "video3.mp4", "video5.mp4",
 
 $("#down").on("click", function() {
     var video = document.getElementById("currentVideo");
+  console.log(video);
     var currentFullPath = video.querySelector("source").src;
+  console.log(currentFullPath);
     var substring = "../socialMediaVideos/";
     var cIndex = currentFullPath.indexOf(substring);
+  console.log(cIndex);
     var currentSrc = currentFullPath.substring(cIndex + substring.length);
+  console.log(currentSrc);
     var currentIndex = videos.indexOf(currentSrc);
+  console.log(currentIndex);
     
     if (currentIndex == videos.length - 1) {
         currentIndex = -1;
     }
     currentIndex++;
     currentSrc = "../socialMediaVideos/" + videos[currentIndex];
+  console.log(currentSrc);
     video.querySelector("source").src = currentSrc;
     checkAdByIndex(currentIndex);
     video.load();
