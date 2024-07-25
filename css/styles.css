@@ -23,10 +23,32 @@
 @font-face {
     font-family: VCRMono; src: url('f../onts/VCR_OSD_MONO_1.001.ttf');
 }
+
 body {
 	margin : 0;
 	font-family : ChicagoFLF;
 	image-rendering : pixelated;
+	overflow : hidden;
+}
+#warning {
+	display : none;
+	width : 100vw;
+	height : 100vh;
+	background : #0222c5;
+	color : white;
+	position : fixed;
+	z-index : 30000;
+}
+#warning h1 {
+	font-size : 40pt;
+	text-align : justify;
+	text-justify : inter-word;
+	padding : 20px;
+}
+@media (max-width: 1119px) {
+    #warning {
+        display : block;
+    }
 }
 .bootupText {
 	font-family: FindersKeepers;
@@ -119,77 +141,45 @@ li a:visited {
 	width : 625px;
 	margin : auto;
 	border : 2px solid black;
+	pointer-events : none;
 }
-#videoInPlayerTwo {
-    display : flex;
-    margin : auto;
-    width : 400px;
-    border : 2px solid black;
-}
-#videoInPlayerTwoPlayButton {
-    display : inline;
-    float : left;
-    width : 25px;
-    height : 25px;
+#controlBar {
+    position: absolute;
+    bottom: 0;
+    width: 625px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
 }
 #videoInMainPlayerPlayButton {
-    display : inline;
-    float : left;
     width : 25px;
     height : 25px;
 }
 #videoInMainPlayerMuteButton {
-	display : inline;
-    float : right;
-	width : 25px;
-	height : 25px;
-	padding-bottom : 10px;
-}
-#videoInPlayerTwoMuteButton {
-    display : inline;
-    float : right;
     width : 25px;
     height : 25px;
-    padding-bottom : 10px;
 }
-#mainVideoProgressContainer {
-	padding-top : 10px;
-    width: 575px;
-    height: 5px;
-    margin : auto;
+#videoInPlayerTwo {
     display : flex;
-    position: relative;
+    margin : auto;
+    border : 2px solid black;
 }
-
-#mainVideoProgressBar {
-    width: 0;
-    margin : auto;
-    display : flex;
-    height: 100%;
-    background-color: black;
-    position: absolute;
-    top: 0;
+#staticFilterVideo {
+    z-index : 19;
+    mix-blend-mode : overlay;
+    position : relative;
+    top : -360px;
     left: 0;
+    pointer-events : none;
 }
-#videoProgressContainerTwo {
-    margin-top : 10px;
-    width: 400px;
-    height: 5px;
-    margin : auto;
-    display : flex;
-    position: relative;
+#backButton {
+	cursor : pointer;
 }
-
-#videoProgressBarTwo {
-    width: 0;
-    margin : auto;
-    display : flex;
-    height: 100%;
-    background-color: black;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding-top : 10px;
+#audio1PlayButton {
+    cursor : pointer;
+}
+#forwardButton {
+    cursor : pointer;
 }
 #openAudioPlayer {
 	right : 30px;
@@ -202,7 +192,7 @@ li a:visited {
 }
 #openMainVideoPlayer {
     right : 28px;
-    top : 260px;
+    top : 320px;
     position : fixed;
     text-align : center;
 }
@@ -211,7 +201,7 @@ li a:visited {
 }
 #openVideoPlayerTwo {
     right : 20px;
-    top : 375px;
+    top : 415px;
     position : fixed;
     text-align : center;
 }
@@ -220,7 +210,7 @@ li a:visited {
 }
 #openAboutMe {
     right : 40px;
-    top : 145px;
+    top : 130px;
     position : fixed;
     text-align : center;
 }
@@ -234,6 +224,15 @@ li a:visited {
 #openAboutMe a:visited {
     text-decoration : none;
     color : black;
+}
+#openShowroom {
+    right : 35px;
+    top : 225px;
+    position : fixed;
+    text-align : center;
+}
+#openShowroom p {
+    margin : auto;
 }
 .marqueeContainer {
     background-color: black;
@@ -323,7 +322,7 @@ li a:visited {
 }
 #grayscaleButton {
 	position : fixed;
-	top : 490px;
+	top : 510px;
 	right : 13px;
 	text-align : center;
 }
@@ -338,7 +337,7 @@ h3 {
 	display : block;
 	width : 350px;
 	z-index : 1;
-	top : 80px;
+	top : 90px;
 	right : 160px;
 }
 #infoWindow p {
