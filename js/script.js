@@ -219,7 +219,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // VIDEO PLAY BUTTON
 function togglePlay(pauseImg, playImg, videoId) {
 let video = document.getElementById(videoId);
-    if (!video.paused) {
+    var state = video.getPlayerState();
+    if (state === YT.PlayerState.PLAYING) {
         video.pauseVideo();
         document.getElementById(videoId + "PlayButton").src = playImg;
     } else {
