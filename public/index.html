@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="../css/styles.css">
- <script src="/path/to/jquery.min.js"></script>
- <script src="jquery.marquee.js"></script>
+ <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <script src="https://www.youtube.com/iframe_api"></script>
 <title>UNLIMITED</title>
 </head>
 <body style="background-color: black">
@@ -27,14 +28,10 @@
 
 <div class="window" id="mainVideoPlayer">
 <div class="windowHeader" id="mainVideoPlayerHeader"><span class="windowCloseButton" id="closeMainVideoPlayer">X</span>==== Video Player ====</div>
-<div class="column left"><video id="videoInMainPlayer" autoplay muted loop>
-<source src="../assets/forest.mp4" type="video/mp4"></source>
-</video>
-<img src="../assets/pauseButton.png" id="videoInMainPlayerPlayButton" onclick="togglePlay('../assets/pauseButton.png', '../assets/playButton.png', 'videoInMainPlayer')">
-<img src="../assets/landingMuted.png" id="videoInMainPlayerMuteButton" onclick="toggleVideoMute('../assets/landingMuted.png', '../assets/landingUnmuted.png', 'videoInMainPlayer')">
-    <div id="mainVideoProgressContainer">
-        <div id="mainVideoProgressBar"></div>
-    </div>
+<div class="column left"><iframe width="625" height="352" src="https://www.youtube.com/embed/2B-XwPjn9YY?si=mV0UCIz15PNAFsUz&rel=0&controls=0&autoplay=1&modestbranding=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; modestbranding; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen id="videoInMainPlayer"></iframe>
+<video src="../assets/staticFilterIndex.mp4" autoplay muted loop id="staticFilterVideo" height="100%" width="625px"></video>
+<div id="controlBar"><img src="../assets/pauseButton.png" id="videoInMainPlayerPlayButton" onclick="togglePlay('../assets/pauseButton.png', '../assets/playButton.png', 'videoInMainPlayer')">
+<img src="../assets/landingMuted.png" id="videoInMainPlayerMuteButton" onclick="toggleVideoMute('../assets/landingMuted.png', '../assets/landingUnmuted.png', 'videoInMainPlayer')"></div>
 </div>
 <div class="column right"><h1>Video Library</h1>
 <div id="openVideo1" class="openVideo"><img src="../assets/video.png"><p>Video 1</p></div>
@@ -45,24 +42,20 @@
 
 <div class="window" id="audioPlayer">
 <div class="windowHeader" id="audioPlayerHeader"><span class="windowCloseButton" id="closeAudioPlayer">X</span>==== Audio Player ====</div>
-<div class='marqueeContainer'><div class="marquee">Choir Singing - The Choir</div><div class="marquee">Choir Singing - The Choir</div></div>
-<audio src="../assets/choir.mp3" muted id="audio1"></audio>
+<div class='marqueeContainer'><div class="marquee">Wonderland - David Reilly</div><div class="marquee">Wonderland - David Reilly</div></div>
+<audio id="audio1" muted>
+<source src="../assets/wonderland.mp3">
+</audio>
 <div id="buttonBar">
-<img src="../assets/back.png" id='backButton' onclick="backAudio(audio1)">
+<img src="../assets/back.png" id='backButton' onclick="previousSong()">
 <img src="../assets/playButton.png" id="audio1PlayButton" onclick="toggleAudioPlay('../assets/pauseButton.png', '../assets/playButton.png', 'audio1')">
-<img src="../assets/forward.png" id="forwardButton"></div>
+<img src="../assets/forward.png" id="forwardButton" onclick="nextSong()"></div>
 </div>
 
 <div class="window" id="videoPlayerTwo">
 <div class="windowHeader" id="VideoPlayerTwoHeader"><span class="windowCloseButton" id="closeVideoPlayerTwo">X</span>You look like you need a break</div>
-<video id="videoInPlayerTwo" autoplay muted loop>
-<source src="../assets/food.mp4" type="video/mp4"></source>
-</video>
-<img src="../assets/pauseButton.png" id="videoInPlayerTwoPlayButton" onclick="togglePlay('../assets/pauseButton.png', '../assets/playButton.png', 'videoInPlayerTwo')">
-<img src="../assets/landingMuted.png" id="videoInPlayerTwoMuteButton" onclick="toggleVideoMute('../assets/landingMuted.png', '../assets/landingUnmuted.png', 'videoInPlayerTwo')">
-    <div id="videoProgressContainerTwo">
-        <div id="videoProgressBarTwo"></div>
-    </div></div>
+<iframe width="400" height="225" src="https://www.youtube.com/embed/7ghSziUQnhs?si=aZEMPS9cC9CjLlDG&amp;controls=0&amp;start=21&amp;autoplay=1&amp;loop=1&amp;rel=0&amp;modestbranding=1&amp;mute=1" title="YouTube video player" autoplay="1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen id="videoInPlayerTwo"></iframe>
+</div>
 <div id="infoWindow" class="window">
 <div class="windowHeader" id="infoWindowHeader">==== What is this? ====</div>
 <h3>ABOUT UNLIMITED</h3>
@@ -70,15 +63,19 @@
 Explore the site. Laugh at its gaudy stupidity and the unironic use of <span style="font-family : ComicSansMS; font-size : 14pt; color : green">Comic Sans</span> as a design element. Remember what was good and use it to take a break from being marketed to and influenced.</p>
 </div>  
 <div id="openAudioPlayer">
-<img src="../assets/audioPlayer.png" width="75px"><p>Audio Player</p>
+<img src="../assets/audioPlayer.png" width="60px"><p>Audio Player</p>
 </div>
 <div id="openAboutMe">
-<img src="../assets/aboutMe.png" width="75px"><a href="aboutMe.html">About Me</a>
+<img src="../assets/aboutMe.png" width="60px"><a href="aboutMe.html">About Me</a>
 </div>
-<div id="openMainVideoPlayer"><img src="../assets/videoPlayer.png" width="75px"><p>Video Player</p></div>
-<div id="openVideoPlayerTwo"><img src="../assets/subwaySurfers.png" width="75px"><p>Need a break?</p></div>
-<div id="grayscaleButton"><img src="../assets/iNeedABreak.png" width="75px"><p>Make Me Boring</p></div>
+<div id="openShowroom">
+<img src="../assets/showroomIcon.png" width="60px"><p>Showroom</p>
 </div>
+<div id="openMainVideoPlayer"><img src="../assets/videoPlayer.png" width="60px"><p>Video Player</p></div>
+<div id="openVideoPlayerTwo"><img src="../assets/subwaySurfers.png" width="60px"><p>Need a break?</p></div>
+<div id="grayscaleButton"><img src="../assets/iNeedABreak.png" width="60px"><p>Make Me Boring</p></div>
+</div>
+<div id="warning"><h1>WARNING! Screens smaller than 1120px are not optimal for this experience.<br><br>This is an experimental website and may look horrendous on smaller screens. Click to proceed.</h1></div>
 <script src="../js/script.js"></script>
 </body>
 </html>
