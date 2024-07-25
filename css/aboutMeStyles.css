@@ -25,6 +25,7 @@
 }
 body {
 	margin : 0;
+	overflow : hidden;
 }
 #headerMarquee {
     font-family: "roc-grotesk-wide", sans-serif;
@@ -50,7 +51,7 @@ body {
        transform: translateX(0%);
       }
      100% {
-        transform: translateX(-100%);
+        transform: translateX(-100vw);
       }
 }
 #nameMarquee {
@@ -63,7 +64,7 @@ body {
     border-bottom : 2px solid black;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: black;
-    width: full;
+    width: 100%;
     overflow: hidden;
     white-space: nowrap;
 }
@@ -71,15 +72,7 @@ body {
 #marquee2Text {
      display: inline-block;
      width : 100%;
-     animation: marqueeR 45s linear infinite;
-}
-@keyframes marqueeR {
-     0% {
-       transform: translateX(-75%);
-      }
-     100% {
-        transform: translateX(100%);
-      }
+     animation: marquee 45s linear infinite reverse;
 }
 #marqueeText:hover {
     animation-play-state : paused;
@@ -98,7 +91,7 @@ body {
 }
 p {
 	font-family : Helvetica, sans-serif;
-	font-size : 16pt;
+	font-size : 15pt;
 	color : #0222c5;
 	width : 65%;
 	position : static;
@@ -116,6 +109,7 @@ p {
 }
 a {
 	font-family : "roc-grotesk-wide", sans-serif;
+	line-height : 0;
 	font-size : 25pt;
 	font-weight : 700;
 	font-style : normal;
@@ -141,6 +135,7 @@ a:hover {
 }
 #homeLink {
 	position : absolute;
+	line-height : 20px;
 	height : 20px;
 	top : 510px;
 	left : 230px;
