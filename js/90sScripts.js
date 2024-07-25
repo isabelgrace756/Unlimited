@@ -267,19 +267,21 @@ let audio = document.getElementById(audioId);
         document.getElementById("playButton").src = pauseImg;
     }
 }
-const songSrcs = new Array("../90sAssets/barbie.mp3", "../90sAssets/kernkraft.mp3", "../90sAssets/windows.mp3");
+const songSrcs = new Array("90sAssets/barbie.mp3", "90sAssets/kernkraft.mp3", "90sAssets/windows.mp3");
 const songMap = new Map();
-songMap.set("../90sAssets/barbie.mp3", "Barbie Secret Agent-Gameboy Color");
-songMap.set("../90sAssets/kernkraft.mp3", "Kernkraft 400-Zombie Nation");
-songMap.set("../90sAssets/windows.mp3", "canyon.mid - Windows 95");
+songMap.set("90sAssets/barbie.mp3", "Barbie Secret Agent-Gameboy Color");
+songMap.set("90sAssets/kernkraft.mp3", "Kernkraft 400-Zombie Nation");
+songMap.set("90sAssets/windows.mp3", "canyon.mid - Windows 95");
 
 
 function nextSong() {
     var audioElement = document.getElementById("audio1");
     var currentFullPath = audioElement.querySelector("source").src;
-    var substring = "InfoEraWebExperience/";
+    var substring = "https://unlimitedtheinfoera.com/";
+    console.log(currentFullPath);
     
     var cIndex = currentFullPath.indexOf(substring);
+    console.log(cIndex);
     var currentSrc = "../" + currentFullPath.substring(cIndex + substring.length);
     var currentIndex = songSrcs.indexOf(currentSrc);
 
@@ -303,7 +305,7 @@ function nextSong() {
 function previousSong() {
     var audioElement = document.getElementById("audio1");
     var currentFullPath = audioElement.querySelector("source").src;
-    var substring = "InfoEraWebExperience/";
+    var substring = "https://unlimitedtheinfoera.com/";
     
     var cIndex = currentFullPath.indexOf(substring);
     var currentSrc = "../" + currentFullPath.substring(cIndex + substring.length);
