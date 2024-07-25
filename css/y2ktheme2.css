@@ -28,6 +28,27 @@ body {
 	font-family : Papyrus;
 	background-color : #9747FF; 
     background-image : url('../y2kAssets/theme2/bg.gif');
+    cursor : url(../y2kAssets/2000sCursor.png), auto;
+}
+#warning {
+    display : none;
+    width : 100vw;
+    height : 100vh;
+    background : #db0083;
+    color : black;
+    position : fixed;
+    z-index : 30000;
+}
+#warning h1 {
+    font-size : 40pt;
+    text-align : justify;
+    text-justify : inter-word;
+    padding : 20px;
+}
+@media (max-width: 1119px) {
+    #warning {
+        display : block;
+    }
 }
 #header {
 	width : 100%;
@@ -192,20 +213,13 @@ ul {
 	height : 200px;
 	text-align : center;
 }
-#nowPlaying h2 {
-	font-size : 30pt;
-	margin-top : 20px;
-	margin-bottom : 0;
-}
-#nowPlaying p {
-	font-size : 25pt;
-	font-family : ComicSans;
-	margin-top : 20px;
-	color: #111111;
-    text-align: center;
-    -webkit-animation: glow 1s ease-in-out infinite alternate;
-    -moz-animation: glow 1s ease-in-out infinite alternate;
-    animation: glow 1s ease-in-out infinite alternate;
+#nowPlaying a {
+    font-size : 60pt;
+    position : relative;
+    top : 25%;
+    text-decoration : none;
+    color : black;
+    margin-bottom : 0;
 }
 @-webkit-keyframes glow {
   from {
@@ -214,6 +228,11 @@ ul {
   to {
     text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
   }
+}
+#nowPlaying a:hover {
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
 }
 #gridPicBox {
 	background-color : #fffe23;
