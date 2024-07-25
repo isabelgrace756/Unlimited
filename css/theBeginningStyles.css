@@ -13,6 +13,7 @@ body, html {
     padding: 0;
     height: 150vh;
     overflow : scroll;
+    cursor : url(../assets/beginningCursor.png), auto;
     &::-webkit-scrollbar { display : none; }
 }
 #loadingScreen img{
@@ -30,6 +31,26 @@ body, html {
 	position : fixed;
 	top : 34%;
 	left : 33%;
+}
+#warning {
+    display : none;
+    width : 100vw;
+    height : 100vh;
+    background : black;
+    color : #fffe23;
+    position : fixed;
+    z-index : 30000;
+}
+#warning h1 {
+    font-size : 40pt;
+    text-align : justify;
+    text-justify : inter-word;
+    padding : 20px;
+}
+@media (max-width: 1119px) {
+    #warning {
+        display : block;
+    }
 }
 #parallaxContainer {
     position: relative;
